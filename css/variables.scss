@@ -1,0 +1,186 @@
+:root {
+  /* New variables */
+  --grey-header: #1d1d1d;
+}
+
+$grey-header: #1d1d1d;
+$light-blue: #b0def0;
+$lighter-blue: #c3dfea;
+$blue: #5ba9c8;
+$text-color: #d0d0d0;
+$grey: #868686;
+$gradient-ws: linear-gradient(44.91deg, #555498 -5.12%, #7fa0f5 49.85%, #4eaace 92.6%);
+
+/* Liana Variables, delete WS */
+$liana-green: #00ff66;
+$liana-lime-green: #8fff71;
+$liana-light-grey: #e6e6e6;
+$liana-grey: #cccccc;
+$liana-black: #141414;
+$grey: #7b7b7b;
+$grey-darker: #373737;
+$white: #f4f4f4;
+$light-green: #9beb85;
+
+//-------- FONT VARIABLES -------//
+$primary-font: "IBM Plex Sans", sans-serif;
+$regular-italic: "ibm_plex_sansitalic";
+
+// Font Weight
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$black: 900;
+
+@mixin font($font-weight, $font-size, $color) {
+  font-family: $primary-font;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin flex($justify-content, $align-items, $flex-direction: row) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: $justify-content;
+  -ms-flex-pack: $justify-content;
+  justify-content: $justify-content;
+  -webkit-box-align: $align-items;
+  -ms-flex-align: $align-items;
+  align-items: $align-items;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: $flex-direction;
+  flex-direction: $flex-direction;
+}
+
+@mixin flexcenter() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+}
+
+/* FONT FACE IMPORTS FOR LOCAL FONT */
+
+@font-face {
+  font-family: "ibm_plex_sansbold";
+  src: url("../assets/font/ibmplexsans-bold-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sansbold_italic";
+  src: url("../assets/font/ibmplexsans-bolditalic-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-bolditalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_extralightRg";
+  src: url("../assets/font/ibmplexsans-extralight-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-extralight-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_extralightIt";
+  src: url("../assets/font/ibmplexsans-extralightitalic-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-extralightitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sansitalic";
+  src: url("../assets/font/ibmplexsans-italic-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_lightregular";
+  src: url("../assets/font/ibmplexsans-light-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_lightitalic";
+  src: url("../assets/font/ibmplexsans-lightitalic-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-lightitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_mediumregular";
+  src: url("../assets/font/ibmplexsans-medium-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_mediumitalic";
+  src: url("../assets/font/ibmplexsans-mediumitalic-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-mediumitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sansregular";
+  src: url("../assets/font/ibmplexsans-regular-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_semiboldregular";
+  src: url("../assets/font/ibmplexsans-semibold-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_semibolditalic";
+  src: url("../assets/font/ibmplexsans-semibolditalic-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-semibolditalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_thinregular";
+  src: url("../assets/font/ibmplexsans-thin-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm_plex_sans_thinitalic";
+  src: url("../assets/font/ibmplexsans-thinitalic-webfont.woff2") format("woff2"),
+    url("../assets/font/ibmplexsans-thinitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

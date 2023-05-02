@@ -1,0 +1,758 @@
+@import "variables.scss";
+
+/*******************************************************************************************************************/
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #000;
+    font-size: 62.5%;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100vw;
+    height: 100%;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+main {
+    width: 100vw;
+    height: auto;
+}
+
+section {
+    width: 100vw;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button,
+button:focus {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/******************* Text styles ******************/
+
+h1 {
+    @include font($bold, 80px, #fff);
+    line-height: 87.2px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 46px;
+    }
+    @media screen and (max-width: 500px) {
+        font-size: 42px;
+    }
+}
+
+h2 {
+    @include font($bold, 64px, $liana-black);
+    line-height: 60px;
+
+    @media screen and (max-width: 850px) {
+        font-size: 38px;
+        line-height: 42px;
+    }
+}
+
+h3 {
+    @include font($semibold, 36px, $liana-grey);
+    text-transform: uppercase;
+}
+
+h5 {
+    @include font($bold, 24px, #2e2e2e);
+    line-height: 26px;
+}
+
+h6 {
+    @include font($bold, 32px, $white);
+    line-height: 36px;
+    text-align: center;
+}
+
+p {
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 20px;
+}
+
+p.text {
+    @include font($regular, 16px, $grey-darker);
+    line-height: 23px;
+}
+
+/******************* Buttons ******************/
+
+.btn-primary {
+    height: 44px;
+    border-radius: 0 16px;
+    background-color: $liana-black;
+    @include font($semibold, 18px, $white);
+    @include flexcenter();
+    gap: 6px;
+    width: fit-content;
+    padding: 0 30px;
+    white-space: nowrap;
+    cursor: pointer;
+
+    .icon,
+    img {
+        height: 18px;
+        width: auto;
+    }
+
+    &:focus,
+    &:visited {
+        color: #fff;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: $liana-green;
+            color: $liana-black;
+            filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.1));
+
+            svg {
+                path {
+                    fill: $liana-black;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+.btn-secondary {
+    @extend .btn-primary;
+    border: 1px solid $liana-lime-green;
+    color: $liana-lime-green;
+
+    &:focus,
+    &:visited {
+        color: $liana-lime-green;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: $liana-lime-green;
+            color: $liana-black;
+            filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.1));
+
+            svg {
+                path {
+                    fill: $liana-black;
+                }
+            }
+        }
+    }
+}
+
+.btn-green {
+    @extend .btn-primary;
+    background-color: $liana-green;
+    color: $liana-black;
+    border: 1px solid $liana-green;
+    text-transform: uppercase;
+    padding: 0 50px;
+
+    &:focus,
+    &:visited {
+        color: $liana-black;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: $liana-black;
+            color: $liana-green;
+        }
+    }
+}
+
+.text-link {
+    font-weight: $bold;
+    text-decoration: underline;
+
+    &:focus,
+    &:visited {
+        text-decoration: underline;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            text-decoration: underline;
+
+            color: $liana-green;
+        }
+    }
+}
+
+.btn-icon {
+    padding: 0 30px;
+    img {
+        width: auto;
+        height: auto;
+        max-height: 14px;
+    }
+    @media (hover: hover) {
+        &:hover {
+            color: inherit;
+        }
+    }
+}
+
+/******************* Images ******************/
+
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/****************************************** General ******************************************/
+
+.flex-start-col {
+    @include flex(flex-start, flex-start, column);
+}
+
+/* USED IN SECTIONS: INHERITANCE, BACKUPS, MULTISIG */
+.section-content-wrapper {
+    @include flex(space-between, flex-start);
+    max-width: 1200px;
+    gap: 60px;
+
+    .flex-start-col {
+        flex: 1;
+        gap: 20px;
+    }
+
+    .section-img-wrapper {
+        width: 50%;
+        flex: 1;
+        max-width: 530px;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+/****************************************** Header ******************************************/
+
+header {
+    width: 100vw;
+    height: 84px;
+    background-color: $grey-header;
+    @include flex(flex-start, stretch, column);
+    position: fixed;
+    top: 0;
+    z-index: 3;
+
+    .top-header {
+        padding: 0 5%;
+        background-color: #0e0e0e;
+        height: 34px;
+        width: 100%;
+        @include flex(flex-start, center);
+        border-bottom: 1px solid #000;
+
+        @media screen and (max-width: 520px) {
+            padding: 0 3%;
+        }
+
+        ul {
+            @include flex(flex-start, center);
+            gap: 36px;
+
+            @media screen and (max-width: 520px) {
+                gap: 20px;
+            }
+            @media screen and (max-width: 400px) {
+                gap: 10px;
+            }
+        }
+
+        .product-menu-item a {
+            @include font($regular, 14px, #646363);
+            white-space: nowrap;
+
+            @media screen and (max-width: 400px) {
+                font-size: 13px;
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    color: $light-green;
+                }
+            }
+        }
+        .product-menu-item.disabled a {
+            color: #646363;
+            cursor: default;
+        }
+        .product-menu-item.active a {
+            color: $lighter-blue;
+        }
+    }
+
+    .bottom-header {
+        height: 50px;
+        padding: 0% 5%;
+        background-color: #1d1d1d;
+        @include flex(space-between, center);
+        width: 100%;
+        border-bottom: 1px solid #0e0e0e;
+
+        @media screen and (max-width: 520px) {
+            padding: 0 3%;
+        }
+
+        .logo-and-text {
+            @include flex(flex-start, center);
+            gap: 10px;
+
+            #main-logo {
+                height: 30px;
+                width: auto;
+            }
+            #logo-name {
+                height: 18px;
+                width: auto;
+
+                @media screen and (max-width: 520px) {
+                    height: 14px;
+                }
+                @media screen and (max-width: 400px) {
+                    display: none;
+                }
+            }
+        }
+
+        #desktop-menu {
+            ul {
+                @include flex(flex-end, center);
+                gap: 20px;
+
+                .menu-item a {
+                    @include font($medium, 16px, $liana-light-grey);
+                    white-space: nowrap;
+
+                    @media (hover: hover) {
+                        &:hover {
+                            color: $liana-green;
+                        }
+                    }
+                }
+                .menu-item.active a {
+                    color: $light-green;
+                }
+            }
+        }
+
+        li.menu-item img {
+            height: 26px;
+            width: 26px;
+        }
+
+        .menu-git {
+            @include flexcenter();
+            border-radius: 50%;
+            height: 25px;
+            width: 26px;
+
+            @media (hover: hover) {
+                &:hover {
+                    background-color: $liana-green;
+                }
+            }
+
+            a {
+                @include flexcenter();
+            }
+        }
+
+        /* revisto até aqui */
+        .disabled a {
+            cursor: default;
+            color: var(--grey) !important;
+        }
+
+        .menu-item.disabled:hover {
+            cursor: default;
+            background: var(--grey);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        span#coming-text {
+            color: var(--grey);
+        }
+    }
+}
+
+.flex-start {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/********************* 1st Section - BANNER ***************************************************************/
+
+section#banner {
+    min-height: calc(100vh - 60px);
+    margin-top: 84px;
+    background-color: $liana-black;
+    padding: 10% 5%;
+    @include flex(center, center, column);
+
+    .banner-wrapper {
+        max-width: 1200px;
+        margin-bottom: 5%;
+        @include flex(space-between, center);
+
+        .banner-text {
+            @include flex(flex-start, flex-start, column);
+            width: 50%;
+
+            p.description {
+                @include font($bold, 24px, $liana-light-grey);
+            }
+            .banner-image {
+                max-width: 600px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+/********************* 2nd Section - LIANA USES ***************************************************************/
+
+section#liana-uses {
+    padding: 5%;
+    background-color: #262626;
+    @include flex(center, center, column);
+    gap: 60px;
+
+    .flex-buttons {
+        @include flex(center, center);
+        gap: 20px;
+
+        .btn-uses {
+            height: 100px;
+            padding: 0 30px;
+            background-color: $liana-black;
+            @include font($bold, 30px, $liana-green);
+            @include flexcenter();
+            border-radius: 0 40px;
+
+            @media (hover: hover) {
+                &:hover {
+                    background-color: $liana-green;
+                    color: $liana-black;
+                    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.1));
+                }
+            }
+        }
+    }
+}
+
+/********************* 3th Section - INHERITANCE ***************************************************************/
+
+section#inheritance {
+    background-color: $liana-grey;
+    padding: 7% 3% 7% 5%;
+    @include flexcenter();
+
+    h2 {
+        white-space: nowrap;
+    }
+
+    .collapsed-text {
+        display: none;
+    }
+}
+
+/********************* 4th Section - BACKUPS ***************************************************************/
+
+section#backups {
+    background-color: #2c2c2c;
+    padding: 7% 3% 7% 5%;
+    @include flex(center, center, column);
+
+    .heading-wrapper {
+        margin-bottom: 40px;
+    }
+
+    h2 {
+        color: $liana-lime-green;
+        text-align: center;
+        line-height: 64px;
+    }
+
+    h3 {
+        text-transform: none;
+        color: $liana-lime-green;
+    }
+
+    h5 {
+        color: $liana-light-grey;
+        font-weight: $semibold;
+    }
+    .text-bold {
+        @include font($bold, 16px, $liana-light-grey);
+        line-height: 24px;
+    }
+    .text-italic {
+        @include font($regular, 16px, $liana-grey);
+        font-family: $regular-italic;
+    }
+    .collapsed-text {
+        display: none;
+        align-items: center;
+        gap: 20px;
+        max-width: 800px;
+        margin-top: 60px;
+
+        .text {
+            color: $liana-light-grey;
+        }
+    }
+}
+
+/********************* 5th Section - MULTISIG ***************************************************************/
+
+section#multisig {
+    background-color: $liana-black;
+    padding: 7% 3% 7% 5%;
+    @include flex(center, center, column);
+    gap: 40px;
+
+    .section-content-wrapper {
+        align-items: center;
+
+        h2 {
+            color: $white;
+        }
+
+        p.text {
+            color: $liana-light-grey;
+        }
+        p.text.grey {
+            color: #9b9b9b;
+            font-size: 15px;
+        }
+    }
+
+    .btn-secondary {
+        padding: 0 80px;
+    }
+}
+
+/********************* 8th and 9th Sections  - SPECS & HARDWARE SIGNERS ***************************************************************/
+
+section#specs,
+section#hardware-signers {
+    background-color: $liana-black;
+    padding: 7% 5%;
+}
+.container-3col {
+    max-width: 1200px;
+    @include flex(space-between, flex-start);
+    margin: auto;
+
+    .each-col {
+        width: 33%;
+        @include flex(flex-start, center, column);
+        gap: 10px;
+        flex: 1;
+
+        h6 {
+            max-width: 245px;
+        }
+
+        img {
+            width: auto;
+            height: 100%;
+            max-height: 126px;
+        }
+    }
+}
+
+section#hardware-signers {
+    h3 {
+        @include font($bold, 40px, $liana-lime-green);
+        text-transform: none;
+        text-align: center;
+    }
+    p.hardware-description {
+        @include font($light, 20px, $white);
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .each-col {
+        background-color: $liana-grey;
+        border-radius: 4px;
+        @include flexcenter();
+        height: 120px;
+        max-width: 320px;
+
+        h6 {
+            color: $liana-black;
+        }
+
+        img {
+            max-height: 86px;
+            width: auto;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: $white;
+            }
+        }
+    }
+    .coming {
+        background-color: $grey;
+
+        h6 {
+            font-size: 24px;
+            color: $liana-light-grey;
+        }
+        @media (hover: hover) {
+            &:hover {
+                background-color: $grey;
+            }
+        }
+    }
+}
+
+/********************* Footer ***************************************************************/
+
+footer {
+    @include flex(space-between, center);
+    padding: 4% 10%;
+    background-color: #0e0e0e;
+    border-top: 1px solid;
+
+    @media screen and (max-width: 700px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        padding: 10%;
+    }
+    @media screen and (max-width: 500px) {
+        gap: 40px;
+    }
+
+    .logo-wrapper {
+        @include flex(flex-start, flex-start, column);
+        gap: 12px;
+
+        @media screen and (max-width: 500px) {
+            align-items: center;
+        }
+
+        img {
+            width: 195px;
+            height: auto;
+        }
+        #credits {
+            @include font($regular, 14px, #a1a1a1);
+            letter-spacing: 0.075em;
+        }
+    }
+    .footer-menu {
+        @include flex(flex-end, flex-start);
+        gap: 60px;
+
+        @media screen and (max-width: 500px) {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .each-col {
+            .col-title {
+                @include font($semibold, 15px, $grey);
+
+                &:hover {
+                    color: $grey;
+                }
+            }
+            ul {
+                @include flex(flex-start, flex-start, column);
+                gap: 12px;
+
+                li {
+                    @include font($medium, 14px, $liana-light-grey);
+                    white-space: nowrap;
+                    &:hover {
+                        color: $liana-green;
+                    }
+                }
+                .disabled {
+                    color: $grey;
+                    &:hover {
+                        text-decoration: none;
+                        color: $grey;
+                        cursor: default;
+                        a {
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+            .icons-holder {
+                @include flex(flex-start, flex-start, column);
+                gap: 10px;
+                .a-icon {
+                    @include flexcenter();
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    &:hover {
+                        background-color: $blue;
+                    }
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
