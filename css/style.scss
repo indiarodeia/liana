@@ -583,6 +583,113 @@ section#multisig {
     }
 }
 
+/********************* 6th Section - PLANS ***************************************************************/
+section#plans {
+    @include flex(flex-start, center, column);
+    gap: 10px;
+    padding: 6% 5%;
+    background-color: #f5f5f5;
+
+    h3 {
+        @include font($bold, 58px, $liana-black);
+        text-transform: none;
+    }
+    .plans-description {
+        @include font($medium, 16px, $liana-black);
+        line-height: 147%;
+        max-width: 580px;
+        text-align: center;
+    }
+    .plan-cards-container {
+        @include flex(center, stretch);
+        gap: 40px;
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 40px;
+        flex-wrap: wrap;
+
+        .plan-card {
+            height: auto;
+            max-width: 360px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 0px 40px;
+            padding: 30px;
+            border: 4px solid;
+            border-color: $liana-green;
+            @include flex(space-between, stretch, column);
+
+            .card-content {
+                @include flex(flex-start, stretch, column);
+                gap: 16px;
+
+                .badge {
+                    background-color: $liana-light-grey;
+                    border-radius: 5px;
+                    padding: 6px 14px;
+                    @include font($semibold, 15px, #000b33);
+                    text-transform: uppercase;
+                    @include flexcenter();
+                    width: fit-content;
+                }
+
+                .description {
+                    @include font($regular, 15px, $grey-darker);
+                }
+                hr {
+                    background-color: $liana-grey;
+                    height: 1px;
+                    border: 0;
+                    margin: 0;
+                }
+                .price {
+                    @include font($semibold, 60px, $liana-black);
+                    text-transform: uppercase;
+                    line-height: 50px;
+                }
+                .price-description {
+                    @include font($semibold, 15px, $liana-black);
+                }
+
+                ul.specs {
+                    @include flex(flex-start, stretch, column);
+                    gap: 14px;
+
+                    li.spec-item {
+                        @include flex(flex-start, flex-start);
+                        gap: 6px;
+                        @include font($regular, 15px, $grey-darker);
+                        line-height: 126%;
+                        letter-spacing: -0.015em;
+
+                        img {
+                            height: 22px;
+                            width: 22px;
+                        }
+                        .badge-coming-soon {
+                            background-color: #c9fad6;
+                            border-radius: 4px;
+                            padding: 0 4px;
+                            @include font($regular, 10px, #1aa703);
+                        }
+                    }
+                }
+            }
+
+            .card-footer {
+                @include flex(flex-start, stretch, column);
+                gap: 6px;
+                margin-top: 20px;
+
+                a {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
 /********************* 7th Section - FAQ's ***************************************************************/
 
 section#faqs {
