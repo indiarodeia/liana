@@ -660,6 +660,92 @@ section#hardware-signers {
     }
 }
 
+/********************* 10th Section - CONTACTS ***************************************************************/
+
+section#contacts {
+    background-color: $grey-darker;
+    padding: 5%;
+
+    .btn-green {
+        text-transform: none;
+        padding: 0 20px;
+
+        .icon {
+            max-width: 18px;
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                svg {
+                    path {
+                        fill: $liana-green !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-wrapper {
+        max-width: 1200px;
+        margin: auto;
+        @include flex(center, stretch);
+        gap: 40px;
+
+        .card {
+            background-color: $liana-black;
+            border-radius: 0 100px;
+            padding: 40px 50px;
+        }
+        h6 {
+            @include font($bold, 26px, $white);
+            line-height: 117%;
+            text-align: left;
+        }
+        p.contact-description {
+            @include font($light, 16px, $white);
+            line-height: 22px;
+        }
+        .contribute-card {
+            @include flex(center, stretch, column);
+            gap: 12px;
+
+            .btn-green {
+                width: 100%;
+            }
+        }
+        .contacts-card {
+            @include flex(flex-start, center);
+            gap: 20px;
+
+            h6 {
+                white-space: nowrap;
+            }
+            .flex-start-col {
+                gap: 12px;
+            }
+
+            #ws-icon-logo {
+                width: 100%;
+                height: auto;
+                max-height: 100px;
+            }
+            #ws-lettering-logo {
+                max-height: 22px;
+                width: 100%;
+                height: auto;
+            }
+            .flex-wrapper {
+                @include flex(flex-start, baseline);
+                gap: 6px;
+
+                .btn-green {
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+}
+
 /********************* Footer ***************************************************************/
 
 footer {

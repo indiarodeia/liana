@@ -800,6 +800,96 @@ section#hardware-signers .coming h6 {
   }
 }
 
+/********************* 10th Section - CONTACTS ***************************************************************/
+section#contacts {
+  background-color: #373737;
+  padding: 5%;
+}
+section#contacts .btn-green {
+  text-transform: none;
+  padding: 0 20px;
+}
+section#contacts .btn-green .icon {
+  max-width: 18px;
+}
+@media (hover: hover) {
+  section#contacts .btn-green:hover svg path {
+    fill: #00ff66 !important;
+  }
+}
+section#contacts .content-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  gap: 40px;
+}
+section#contacts .content-wrapper .card {
+  background-color: #141414;
+  border-radius: 0 100px;
+  padding: 40px 50px;
+}
+section#contacts .content-wrapper h6 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: #f4f4f4;
+  line-height: 117%;
+  text-align: left;
+}
+section#contacts .content-wrapper p.contact-description {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #f4f4f4;
+  line-height: 22px;
+}
+section#contacts .content-wrapper .contribute-card {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 12px;
+}
+section#contacts .content-wrapper .contribute-card .btn-green {
+  width: 100%;
+}
+section#contacts .content-wrapper .contacts-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+section#contacts .content-wrapper .contacts-card h6 {
+  white-space: nowrap;
+}
+section#contacts .content-wrapper .contacts-card .flex-start-col {
+  gap: 12px;
+}
+section#contacts .content-wrapper .contacts-card #ws-icon-logo {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+}
+section#contacts .content-wrapper .contacts-card #ws-lettering-logo {
+  max-height: 22px;
+  width: 100%;
+  height: auto;
+}
+section#contacts .content-wrapper .contacts-card .flex-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-direction: row;
+  gap: 6px;
+}
+section#contacts .content-wrapper .contacts-card .flex-wrapper .btn-green {
+  margin-right: 6px;
+}
+
 /********************* Footer ***************************************************************/
 footer {
   display: flex;
