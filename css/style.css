@@ -432,7 +432,7 @@ header .top-header .product-menu-item.disabled a {
   cursor: default;
 }
 header .top-header .product-menu-item.active a {
-  color: #c3dfea;
+  color: #9beb85;
 }
 header .bottom-header {
   height: 50px;
@@ -569,9 +569,10 @@ section#banner .banner-wrapper .banner-text {
 }
 section#banner .banner-wrapper .banner-text p.description {
   font-family: "IBM Plex Sans", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 24px;
   color: #e6e6e6;
+  line-height: 31px;
 }
 section#banner .banner-wrapper .banner-text .banner-image {
   max-width: 600px;
@@ -714,6 +715,207 @@ section#multisig .section-content-wrapper p.text.grey {
 }
 section#multisig .btn-secondary {
   padding: 0 80px;
+}
+
+/********************* 7th Section - FAQ's ***************************************************************/
+section#faqs {
+  background-image: url(/assets/images/bg_faq.svg);
+  background-attachment: fixed;
+  padding: 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 60px;
+  /* Collapsible faqs */
+  /* 1st FAQ */
+  /* 2nd FAQ */
+  /* 3h FAQ */
+  /* 4th FAQ */
+  /* 5th FAQ */
+  /* 6th FAQ */
+  /* 7th FAQ */
+  /* 8th FAQ */
+  /* 9th FAQ */
+  /* 10th FAQ */
+}
+section#faqs h4 {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: #e6e6e6;
+  text-align: center;
+}
+section#faqs .faqs-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 0 20px;
+  overflow: hidden;
+}
+section#faqs .faqs-wrapper .faq-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+}
+section#faqs .faqs-wrapper .faq-item .arrow-icon {
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+}
+section#faqs .faqs-wrapper .faq-item .arrow_open {
+  display: none;
+  transition: display 1s;
+}
+section#faqs .faqs-wrapper .faq-item .arrow_close {
+  transition: display 1s;
+}
+section#faqs .faqs-wrapper .faq-item .toggle-input {
+  display: none;
+}
+section#faqs .faqs-wrapper .faq-item .question-container {
+  max-height: 45px;
+  background-color: #cccccc;
+  padding: 10px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  section#faqs .faqs-wrapper .faq-item .question-container:hover {
+    background-color: #f4f4f4;
+  }
+}
+section#faqs .faqs-wrapper .faq-item .question-container .text-question {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #141414;
+}
+section#faqs .faqs-wrapper .faq-item .answer-container {
+  width: 100%;
+  height: auto;
+  background-color: #373737;
+  transition: height 0.5s;
+  transition: transform 0.2s;
+  transform-origin: top;
+}
+section#faqs .faqs-wrapper .faq-item .answer-container .text-answer {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #f4f4f4;
+  transition: 0ms;
+}
+section#faqs input:checked ~ .answer-container {
+  padding: 10px 26px;
+}
+section#faqs input#faq1:not(:checked) ~ .answer-container.one {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq1:not(:checked) ~ .question-container.one .arrow_open {
+  display: block;
+}
+section#faqs input#faq1:not(:checked) ~ .question-container.one .arrow_close {
+  display: none;
+}
+section#faqs input#faq2:not(:checked) ~ .answer-container.two {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq2:not(:checked) ~ .question-container.two .arrow_open {
+  display: block;
+}
+section#faqs input#faq2:not(:checked) ~ .question-container.two .arrow_close {
+  display: none;
+}
+section#faqs input#faq3:not(:checked) ~ .answer-container.three {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq3:not(:checked) ~ .question-container.three .arrow_open {
+  display: block;
+}
+section#faqs input#faq3:not(:checked) ~ .question-container.three .arrow_close {
+  display: none;
+}
+section#faqs input#faq4:not(:checked) ~ .answer-container.four {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq4:not(:checked) ~ .question-container.four .arrow_open {
+  display: block;
+}
+section#faqs input#faq4:not(:checked) ~ .question-container.four .arrow_close {
+  display: none;
+}
+section#faqs input#faq5:not(:checked) ~ .answer-container.five {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq5:not(:checked) ~ .question-container.five .arrow_open {
+  display: block;
+}
+section#faqs input#faq5:not(:checked) ~ .question-container.five .arrow_close {
+  display: none;
+}
+section#faqs input#faq6:not(:checked) ~ .answer-container.six {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq6:not(:checked) ~ .question-container.six .arrow_open {
+  display: block;
+}
+section#faqs input#faq6:not(:checked) ~ .question-container.six .arrow_close {
+  display: none;
+}
+section#faqs input#faq7:not(:checked) ~ .answer-container.seven {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq7:not(:checked) ~ .question-container.seven .arrow_open {
+  display: block;
+}
+section#faqs input#faq7:not(:checked) ~ .question-container.seven .arrow_close {
+  display: none;
+}
+section#faqs input#faq8:not(:checked) ~ .answer-container.eight {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq8:not(:checked) ~ .question-container.eight .arrow_open {
+  display: block;
+}
+section#faqs input#faq8:not(:checked) ~ .question-container.eight .arrow_close {
+  display: none;
+}
+section#faqs input#faq9:not(:checked) ~ .answer-container.nine {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq9:not(:checked) ~ .question-container.nine .arrow_open {
+  display: block;
+}
+section#faqs input#faq9:not(:checked) ~ .question-container.nine .arrow_close {
+  display: none;
+}
+section#faqs input#faq10:not(:checked) ~ .answer-container.ten {
+  transform: scaleY(0);
+  height: 0;
+}
+section#faqs input#faq10:not(:checked) ~ .question-container.ten .arrow_open {
+  display: block;
+}
+section#faqs input#faq10:not(:checked) ~ .question-container.ten .arrow_close {
+  display: none;
 }
 
 /********************* 8th and 9th Sections  - SPECS & HARDWARE SIGNERS ***************************************************************/

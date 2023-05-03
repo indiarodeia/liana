@@ -318,7 +318,7 @@ header {
             cursor: default;
         }
         .product-menu-item.active a {
-            color: $lighter-blue;
+            color: $light-green;
         }
     }
 
@@ -443,7 +443,8 @@ section#banner {
             width: 50%;
 
             p.description {
-                @include font($bold, 24px, $liana-light-grey);
+                @include font($semibold, 24px, $liana-light-grey);
+                line-height: 31px;
             }
             .banner-image {
                 max-width: 600px;
@@ -579,6 +580,238 @@ section#multisig {
 
     .btn-secondary {
         padding: 0 80px;
+    }
+}
+
+/********************* 7th Section - FAQ's ***************************************************************/
+
+section#faqs {
+    background-image: url(/assets/images/bg_faq.svg);
+    background-attachment: fixed;
+    padding: 5%;
+    @include flex(flex-start, stretch, column);
+    gap: 60px;
+
+    h4 {
+        @include font($bold, 36px, $liana-light-grey);
+        text-align: center;
+    }
+
+    .faqs-wrapper {
+        @include flex(flex-start, stretch, column);
+        max-width: 1200px;
+        margin: auto;
+        border-radius: 0 20px;
+        overflow: hidden;
+
+        .faq-item {
+            @include flex(flex-start, stretch, column);
+
+            .arrow-icon {
+                width: 28px;
+                height: 28px;
+                margin-left: 10px;
+            }
+
+            .arrow_open {
+                display: none;
+                -webkit-transition: display 1s;
+                -o-transition: display 1s;
+                transition: display 1s;
+            }
+            .arrow_close {
+                -webkit-transition: display 1s;
+                -o-transition: display 1s;
+                transition: display 1s;
+            }
+
+            .toggle-input {
+                display: none;
+            }
+
+            .question-container {
+                max-height: 45px;
+                background-color: $liana-grey;
+                padding: 10px 26px;
+                @include flex(space-between, center);
+                width: 100%;
+                cursor: pointer;
+                @media (hover: hover) {
+                    &:hover {
+                        background-color: $white;
+                    }
+                }
+
+                .text-question {
+                    @include font($semibold, 18px, $liana-black);
+                }
+            }
+            .answer-container {
+                width: 100%;
+                height: auto;
+                background-color: $grey-darker;
+                -webkit-transition: height 0.5s;
+                -o-transition: height 0.5s;
+                transition: height 0.5s;
+                -webkit-transition: -webkit-transform 0.2s;
+                transition: -webkit-transform 0.2s;
+                -o-transition: transform 0.2s;
+                transition: transform 0.2s;
+                transition: transform 0.2s, -webkit-transform 0.2s;
+                -webkit-transform-origin: top;
+                -ms-transform-origin: top;
+                transform-origin: top;
+
+                .text-answer {
+                    @include font($regular, 14px, $white);
+                    transition: 0ms;
+                }
+            }
+        }
+    }
+
+    input:checked ~ .answer-container {
+        padding: 10px 26px;
+    }
+
+    /* Collapsible faqs */
+
+    /* 1st FAQ */
+    input#faq1:not(:checked) ~ .answer-container.one {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq1:not(:checked) ~ .question-container.one .arrow_open {
+        display: block;
+    }
+    input#faq1:not(:checked) ~ .question-container.one .arrow_close {
+        display: none;
+    }
+
+    /* 2nd FAQ */
+    input#faq2:not(:checked) ~ .answer-container.two {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq2:not(:checked) ~ .question-container.two .arrow_open {
+        display: block;
+    }
+    input#faq2:not(:checked) ~ .question-container.two .arrow_close {
+        display: none;
+    }
+
+    /* 3h FAQ */
+    input#faq3:not(:checked) ~ .answer-container.three {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq3:not(:checked) ~ .question-container.three .arrow_open {
+        display: block;
+    }
+    input#faq3:not(:checked) ~ .question-container.three .arrow_close {
+        display: none;
+    }
+
+    /* 4th FAQ */
+    input#faq4:not(:checked) ~ .answer-container.four {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq4:not(:checked) ~ .question-container.four .arrow_open {
+        display: block;
+    }
+    input#faq4:not(:checked) ~ .question-container.four .arrow_close {
+        display: none;
+    }
+    /* 5th FAQ */
+    input#faq5:not(:checked) ~ .answer-container.five {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq5:not(:checked) ~ .question-container.five .arrow_open {
+        display: block;
+    }
+    input#faq5:not(:checked) ~ .question-container.five .arrow_close {
+        display: none;
+    }
+
+    /* 6th FAQ */
+    input#faq6:not(:checked) ~ .answer-container.six {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq6:not(:checked) ~ .question-container.six .arrow_open {
+        display: block;
+    }
+    input#faq6:not(:checked) ~ .question-container.six .arrow_close {
+        display: none;
+    }
+
+    /* 7th FAQ */
+    input#faq7:not(:checked) ~ .answer-container.seven {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq7:not(:checked) ~ .question-container.seven .arrow_open {
+        display: block;
+    }
+    input#faq7:not(:checked) ~ .question-container.seven .arrow_close {
+        display: none;
+    }
+    /* 8th FAQ */
+    input#faq8:not(:checked) ~ .answer-container.eight {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq8:not(:checked) ~ .question-container.eight .arrow_open {
+        display: block;
+    }
+    input#faq8:not(:checked) ~ .question-container.eight .arrow_close {
+        display: none;
+    }
+
+    /* 9th FAQ */
+    input#faq9:not(:checked) ~ .answer-container.nine {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq9:not(:checked) ~ .question-container.nine .arrow_open {
+        display: block;
+    }
+    input#faq9:not(:checked) ~ .question-container.nine .arrow_close {
+        display: none;
+    }
+
+    /* 10th FAQ */
+    input#faq10:not(:checked) ~ .answer-container.ten {
+        -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+        transform: scaleY(0);
+        height: 0;
+    }
+    input#faq10:not(:checked) ~ .question-container.ten .arrow_open {
+        display: block;
+    }
+    input#faq10:not(:checked) ~ .question-container.ten .arrow_close {
+        display: none;
     }
 }
 
