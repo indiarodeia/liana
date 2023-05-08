@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Liana">
-    <meta name="description" content="The safety net for your coins" />
-    <!-- TODO: Fix Keywords -->
-    <meta name="keywords" content="WIZARD SARDINE REVAULT CUSTODY BITCOIN SOLUTION WALLET LIANA" />
+    <meta name="description"
+        content="Liana is a simple Bitcoin wallet leveraging on-chain timelocks for safety and recovery." />
+    <meta name="keywords" content="LIANA BITCOIN WALLET WIZARDSARDINE INHERITANCE MULTISIG RECOVERY" />
     <meta name="author" content="India Rodeia" />
-    <!-- TODO: For social sharing -->
+    <!-- For social sharing -->
+    <meta property="og:url" content="https://www.wizardsardine/liana" />
     <meta property="og:title" content="Liana" />
     <meta property="og:description" content="The safety net for your coins" />
-    <!-- TODO: social sharing -->
+    <meta property="og:image"
+        content="https://terinovazores.pt/sites/default/files/portfolio/Revault_logo_couleur.png" />
+    <title>Liana</title>˙
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -61,8 +64,13 @@
                     <li class="menu-item"><a title="About" href="html/about.html">What's Liana?</a></li>
                     <li class="menu-item"><a title="Blog" href="html/blog.html">Plans</a></li>
                     <!-- TODO: fix this githubicon -->
-                    <li class="menu-item menu-git"><a title="Github" href="https://github.com/revault" target="_blank">
-                            <img src="assets/images/icons/icon_github_white.svg" alt="Github"></a>
+                    <li class="menu-item menu-git">
+                        <a title="Github" href="https://github.com/revault" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 23">
+                                <path fill="#E6E6E6"
+                                    d="M12 0C5.37 0 0 5.28 0 11.792c0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56C20.565 21.417 24 16.995 24 11.792 24 5.28 18.627 0 12 0Z" />
+                            </svg>
+                        </a>
                     </li>
                 </ul>
 
@@ -78,8 +86,10 @@
                 <div class="banner-text flex-start-col">
                     <h1>The safety net for your coins</h1>
                     <p class="description">Liana is a simple Bitcoin wallet leveraging on-chain timelocks for safety and
-                        recovery.
-                        <br> Self-custody, you are in full control
+                        recovery.</p>
+
+                    <p class="sub-description">
+                        Self-custody, you are in full control
                         <br> Recovery paths if keys are lost
                         <br> We never have control over the funds
                     </p>
@@ -123,22 +133,19 @@
                         away, without having to share your
                         own mnemonic, nor have to rely on a third party.</p>
 
-                    <a class="btn-primary" title="Read more">Read more
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path fill="#fff" d="M16 6.706 9 13.5 2 6.706 3.243 5.5 9 11.088 14.758 5.5 16 6.706Z" />
-                        </svg>
-                    </a>
-
-                    <!-- TODO: IMPLEMENT COLLAPSABLE SECTION -->
-                    <div class="collapsed-text flex-start-col">
+                    <input id="inheritanceCollapsable" type="checkbox" class="toggle-input">
+                    <div class="collapsed-text flex-start-col readmore-inheritance">
                         <p class="text">
-                            Liana is the first wallet to focus on the use of Bitcoin timelocks, to allow some keys to
+                            Liana is the first wallet to focus on the use of Bitcoin timelocks, to allow some keys
+                            to
                             become valid only after you
                             stop using yours for some time. This is enforced by the Bitcoin network itself (smart
                             contract), no third party! This
-                            allows you to retain full control and sovereignty of your bitcoins until you pass away, when
+                            allows you to retain full control and sovereignty of your bitcoins until you pass away,
+                            when
                             your family keys then
-                            become active. The timelock “refreshes” every time you move your coins, as long as you use
+                            become active. The timelock “refreshes” every time you move your coins, as long as you
+                            use
                             the wallet regularly your
                             family will have no access.
                         </p>
@@ -146,24 +153,35 @@
                                 href="#plans">support subscriptions:</a></p>
 
                         <p class="text">
-                            <strong> Liana Premium Package:</strong> our support team helps you define the right rules
+                            <strong> Liana Premium Package:</strong> our support team helps you define the right
+                            rules
                             for the wallet, set
                             it up and even helps your
                             beneficiaries recover the funds when needed.
                         </p>
                         <p class="text">
-                            <strong> Liana Standard Package:</strong> our team regularly check the timelock and remind
+                            <strong> Liana Standard Package:</strong> our team regularly check the timelock and
+                            remind
                             you to refresh
                             them, checks the sanity of your
                             wallet rules and help you perform security checks.
                         </p>
-                        <a class="btn-primary" title="Read less">Read less
+                    </div>
+                    <label for="inheritanceCollapsable" class="btn-primary readmore-inheritance" title="Read more">
+                        <a class="btn-open" title="Read less">Read more
+                            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                <path fill="#fff"
+                                    d="M16 6.706 9 13.5 2 6.706 3.243 5.5 9 11.088 14.758 5.5 16 6.706Z" />
+                            </svg>
+                        </a>
+                        <a class="btn-close" title="Read less">Read less
+
                             <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                                 <path fill="#fff"
                                     d="M2 11.294 9 4.5l7 6.794-1.242 1.206L9 6.912 3.242 12.5 2 11.294Z" />
                             </svg>
                         </a>
-                    </div>
+                    </label>
                 </div>
 
                 <div class="section-img-wrapper">
@@ -204,18 +222,12 @@
                         Liana is built to make you sleep better
                         at night, knowing that your funds are safe even in case of catastrophic failure.</p>
 
-                    <a class="btn-secondary" title="Read more">Read more
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                            <path fill="#8fff71" d="M16 6.706 9 13.5 2 6.706 3.243 5.5 9 11.088 14.758 5.5 16 6.706Z" />
-                        </svg>
-                    </a>
-
                 </div>
             </div>
 
 
-            <!-- TODO: IMPLEMENT COLLAPSABLE SECTION -->
-            <div class="collapsed-text flex-start-col">
+            <input id="backupsCollapsable" type="checkbox" class="toggle-input">
+            <div class="collapsed-text flex-start-col readmore-backups">
                 <p class="text">
                     Liana uses timelocks that can be used to secure paper backups: even if someone finds your
                     recovery mnemonic, they can’t
@@ -235,13 +247,20 @@
                     case you lost all backups, including recovery ones. Possibilities are endless.
                 </p>
 
-                <a class="btn-secondary" title="Read less">Read less
+            </div>
+
+            <label for="backupsCollapsable" class="btn-secondary readmore-backups" title="Read more">
+                <a class="btn-open" title="Read less">Read more
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                        <path fill="#8fff71" d="M16 6.706 9 13.5 2 6.706 3.243 5.5 9 11.088 14.758 5.5 16 6.706Z" />
+                    </svg>
+                </a>
+                <a class="btn-close" title="Read less">Read less
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                         <path fill="#8fff71" d="M2 11.294 9 4.5l7 6.794-1.242 1.206L9 6.912 3.242 12.5 2 11.294Z" />
                     </svg>
                 </a>
-
-            </div>
+            </label>
 
         </section>
 
@@ -326,7 +345,7 @@
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn-primary">Download Liana</a>
-                        <a class="text-btn">Liana is a free open source software</a>
+                        <p class="text">Liana is a free open source software</p>
                     </div>
                 </div>
 
@@ -390,10 +409,10 @@
 
                         </ul>
                     </div>
-                    <!-- TODO: fix this buttons to correct ones -->
+                    <!-- TODO: fix this buttons to correct ones and add links-->
                     <div class="card-footer">
-                        <a href="#" class="btn-primary">Pay with credit card</a>
-                        <a class="text-btn">Payment in Bitcoins is also available</a>
+                        <a href="#" title="Pay with credit card" class="btn-primary">Pay with credit card</a>
+                        <a class="text-btn">Payment with Bitcoins is also available</a>
                     </div>
                 </div>
 
@@ -459,8 +478,8 @@
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn-primary">Pay with credit card</a>
-                        <a class="text-btn">Liana is a free open source software</a>
+                        <a href="#" title="Pay with credit card" class="btn-primary">Pay with credit card</a>
+                        <a class="text-btn">Payment with Bitcoins is also available</a>
                     </div>
                 </div>
             </div>
@@ -609,7 +628,8 @@
                     <input id="faq7" type="checkbox" class="toggle-input">
 
                     <label for="faq7" class="question-container seven">
-                        <p class="text-question">Can I pay my subscription in Bitcoin?</p>
+                        <p class="text-question">Can I pay my subscription in Bitcoin? Can I pay my subscription in
+                            Bitcoin?</p>
                         <img class="arrow-icon arrow_open" src="/assets/images/icons/arrow_down_black.svg" alt="arrow">
                         <img class="arrow-icon arrow_close" src="/assets/images/icons/arrow_up_black.svg" alt="arrow">
                     </label>
@@ -688,11 +708,11 @@
 
             <div class="container-3col">
                 <div class="each-col">
-                    <img src="/assets/images/spec_bitcoin.svg">
-                    <h6>Open Source</h6>
+                    <img src="/assets/images/spec_opensource.svg">
+                    <h6>Open Source Approved License</h6>
                 </div>
                 <div class="each-col">
-                    <img src="/assets/images/spec_bitcoin.svg">
+                    <img src="/assets/images/spec_nottp.svg">
                     <h6>No trusted third parties required</h6>
                 </div>
                 <div class="each-col">
@@ -712,7 +732,7 @@
             <p class="hardware-description">We are working on getting support of Liana in more hardware signers</p>
 
             <div class="container-3col">
-                <a class="each-col">
+                <a class="each-col" title="ledger" href="https://www.ledger.com/" target="_blank">
                     <img src="/assets/images/logo_ledger.svg">
                 </a>
                 <a class="each-col">
@@ -733,7 +753,8 @@
                     <h6>You can contribute <br>
                         to our project</h6>
                     <p class="contact-description">Liana is an open source software</p>
-                    <a class="btn-green" title="Liana on Github">
+                    <a class="btn-green" title="Liana on Github" href="https://github.com/wizardsardine/liana"
+                        target="_blank">
                         Liana on Github
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.58 31.77">
                             <g data-name="Layer 2">
@@ -754,7 +775,7 @@
                         </div>
                         <p class="contact-description">Feel free to contact us anytime</p>
                         <div class="flex-wrapper">
-                            <a class="btn-green">
+                            <a class="btn-green" title="hello@wizardsardine.com" href="mailto:hello@wizardsardine.com">
                                 hello@wizardsardine.com
                                 <svg class="icon" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 13">
                                     <path
@@ -762,7 +783,8 @@
                                         fill="#141414" />
                                 </svg>
                             </a>
-                            <a class="btn-green" title="Visit our website">
+                            <a class="btn-green" title="Visit our website" href="https://wizardsardine.com/"
+                                target="_blank">
                                 Visit our website
                             </a>
                         </div>
@@ -779,35 +801,60 @@
             <img src="assets/images/logo_liana_green.svg" alt="Liana Logo">
             <p id="credits"> © 2023 Wizardsardine LDA</p>
         </div>
-        <!-- TODO: Update links -->
         <div class="footer-menu">
             <div class="each-col">
                 <ul>
                     <li class="col-title">Liana</li>
-                    <li><a title="Contact" href="#">What's for?</a></li>
-                    <li><a title="Website" href="#">Plans</a></li>
+                    <li><a title="Contact" href="#liana-uses">What's for?</a></li>
+                    <li><a title="Website" href="#plans">Plans</a></li>
+                    <!-- TODO: Link Set up -->
                     <li><a title="Store" href="#">Set up</a></li>
-                    <li><a title="Blog" href="#">Contribute</a></li>
+                    <li><a title="Blog" href="#contacts">Contribute</a></li>
                 </ul>
             </div>
             <div class="each-col">
                 <ul>
                     <li class="col-title">Wizardsardine</li>
-                    <li><a title="Contact" href="#">Contact us</a></li>
-                    <li><a title="Website" href="#">Visit our website</a></li>
+                    <li><a title="Contact" href="mailto:hello@wizardsardine.com">Contact us</a></li>
+                    <li><a title="Website" href="https://wizardsardine.com/" target="_blank">Visit our website</a></li>
                     <li><a title="Store" href="#" class="disabled">Store</a></li>
-                    <li><a title="Blog" href="#">Blog</a></li>
+                    <li><a title="Blog" href="https://wizardsardine.com/blog/" target="_blank">Blog</a></li>
                 </ul>
             </div>
             <div class="each-col">
                 <div class="icons-holder">
                     <p class="col-title">Follow us</p>
-                    <a title="Github" href="#" target="_blank" class="a-icon"><img
-                            src="assets/images/icons/icon_github_white.svg" alt="Github"></a>
-                    <a title="Twitter" href="#" target="_blank" class="a-icon"><img
-                            src="assets/images/icons/icon_twitter.svg" alt="Twitter"></a>
-                    <a title="Twitter" href="#" target="_blank" class="a-icon"><img
-                            src="assets/images/icons/icon_twitter.svg" alt="Twitter"></a>
+                    <a title="Github" href="https://github.com/wizardsardine" target="_blank" class="a-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 23">
+                            <path fill="#E6E6E6"
+                                d="M12 0C5.37 0 0 5.28 0 11.792c0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56C20.565 21.417 24 16.995 24 11.792 24 5.28 18.627 0 12 0Z" />
+                        </svg>
+                    </a>
+                    <a title="Twitter" href="https://twitter.com/Wizardsardine" target="_blank" class="a-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30">
+                            <path fill="#e6e6e6"
+                                d="M15 0C6.717 0 0 6.717 0 15c0 8.283 6.717 15 15 15 8.283 0 15-6.717 15-15 0-8.283-6.717-15-15-15Zm6.849 11.695c.006.148.01.296.01.445 0 4.55-3.463 9.796-9.796 9.796a9.746 9.746 0 0 1-5.278-1.546c.27.032.544.047.822.047 1.613 0 3.097-.55 4.276-1.474a3.447 3.447 0 0 1-3.217-2.39 3.425 3.425 0 0 0 1.555-.06 3.444 3.444 0 0 1-2.762-3.375v-.044c.465.258.995.414 1.56.43a3.44 3.44 0 0 1-1.066-4.596 9.775 9.775 0 0 0 7.097 3.598 3.444 3.444 0 0 1 5.867-3.14 6.906 6.906 0 0 0 2.186-.836 3.456 3.456 0 0 1-1.514 1.905 6.866 6.866 0 0 0 1.977-.543 6.994 6.994 0 0 1-1.717 1.783Z" />
+                        </svg>
+                    </a>
+                    <a title="Linkedin" href="https://www.linkedin.com/company/wizardsardine/" target="_blank"
+                        class="a-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                            <defs>
+                                <style>
+                                    .d {
+                                        fill: #e6e6e6;
+                                    }
+                                </style>
+                            </defs>
+                            <g id="a" />
+                            <g id="b">
+                                <g id="c">
+                                    <path class="d"
+                                        d="M15.05,0C6.76-.03,.03,6.67,0,14.95c-.03,8.28,6.67,15.02,14.95,15.05s15.02-6.67,15.05-14.95S23.33,.03,15.05,0ZM7.51,7.46c.31-.31,.74-.49,1.18-.48,.44,0,.87,.18,1.18,.49,.31,.31,.49,.74,.48,1.18,0,.44-.18,.87-.49,1.18-.31,.31-.74,.49-1.18,.48-.44,0-.87-.18-1.18-.49-.31-.31-.49-.74-.48-1.18s.18-.87,.49-1.18Zm2.85,14.52h-3.33l.03-10.44h3.33l-.03,10.44Zm12.5,.04h-3.29l.02-5.49c.01-3.33-3.97-3.06-3.97-.01l-.02,5.47h-3.28l.03-10.44h3.32l-.04,1.41c1.39-2.52,7.28-2.69,7.26,2.45l-.02,6.61Z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>

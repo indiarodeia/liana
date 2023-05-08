@@ -73,26 +73,49 @@ h2 {
     @include font($bold, 64px, $liana-black);
     line-height: 60px;
 
-    @media screen and (max-width: 850px) {
-        font-size: 38px;
-        line-height: 42px;
+    @media screen and (max-width: 1100px) {
+        font-size: 56px;
+    }
+    @media screen and (max-width: 1000px) {
+        font-size: 48px;
+    }
+    @media screen and (max-width: 650px) {
+        font-size: 40px;
     }
 }
 
 h3 {
     @include font($semibold, 36px, $liana-grey);
     text-transform: uppercase;
+
+    @media screen and (max-width: 768px) {
+        font-size: 32px;
+    }
+    @media screen and (max-width: 600px) {
+        font-size: 24px;
+        line-height: 26px;
+    }
 }
 
 h5 {
     @include font($bold, 24px, #2e2e2e);
     line-height: 26px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+        line-height: 24px;
+    }
 }
 
 h6 {
     @include font($bold, 32px, $white);
     line-height: 36px;
     text-align: center;
+
+    @media screen and (max-width: 850px) {
+        font-size: 26px;
+        line-height: 28px;
+    }
 }
 
 p {
@@ -151,17 +174,17 @@ p.text {
 
 .btn-secondary {
     @extend .btn-primary;
-    border: 1px solid $liana-lime-green;
-    color: $liana-lime-green;
+    border: 1px solid $liana-green;
+    color: $liana-green;
 
     &:focus,
     &:visited {
-        color: $liana-lime-green;
+        color: $liana-green;
     }
 
     @media (hover: hover) {
         &:hover {
-            background-color: $liana-lime-green;
+            background-color: $liana-green;
             color: $liana-black;
             filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.1));
 
@@ -245,11 +268,15 @@ p.text {
 .section-content-wrapper {
     @include flex(space-between, flex-start);
     max-width: 1200px;
-    gap: 60px;
+    gap: 30px;
 
     .flex-start-col {
         flex: 1;
         gap: 20px;
+
+        @media screen and (max-width: 768px) {
+            gap: 14px;
+        }
     }
 
     .section-img-wrapper {
@@ -262,6 +289,37 @@ p.text {
             width: 100%;
         }
     }
+
+    .collapsed-text {
+        -webkit-transition: height 1s;
+        -o-transition: height 1s;
+        transition: height 1s;
+        -webkit-transition: -webkit-transform 0.2s;
+        transition: -webkit-transform 0.2s;
+        -o-transition: transform 0.2s;
+        transition: transform 0.2s;
+        transition: transform 0.2s, -webkit-transform 0.2s;
+        -webkit-transform-origin: top;
+        -ms-transform-origin: top;
+        transform-origin: top;
+    }
+}
+
+.btn-open {
+    display: none;
+    -webkit-transition: display 1s;
+    -o-transition: display 1s;
+    transition: display 1s;
+}
+.btn-close {
+    display: block;
+    -webkit-transition: display 1s;
+    -o-transition: display 1s;
+    transition: display 1s;
+}
+
+.toggle-input {
+    display: none;
 }
 
 /****************************************** Header ******************************************/
@@ -387,14 +445,23 @@ header {
             height: 25px;
             width: 26px;
 
-            @media (hover: hover) {
-                &:hover {
-                    background-color: $liana-green;
-                }
-            }
-
             a {
                 @include flexcenter();
+
+                svg {
+                    width: 24px;
+                    height: auto;
+                }
+
+                @media (hover: hover) {
+                    &:hover {
+                        svg {
+                            path {
+                                fill: $liana-green;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -437,6 +504,8 @@ section#banner {
         max-width: 1200px;
         margin-bottom: 5%;
         @include flex(space-between, center);
+        /* TODO: define correct breakpoint after knowing what is going here */
+        flex-wrap: wrap;
 
         .banner-text {
             @include flex(flex-start, flex-start, column);
@@ -445,6 +514,10 @@ section#banner {
             p.description {
                 @include font($semibold, 24px, $liana-light-grey);
                 line-height: 31px;
+            }
+            p.sub-description {
+                @include font($medium, 20px, $liana-grey);
+                line-height: 24px;
             }
             .banner-image {
                 max-width: 600px;
@@ -468,9 +541,26 @@ section#liana-uses {
     @include flex(center, center, column);
     gap: 60px;
 
+    @media screen and (max-width: 768px) {
+        gap: 30px;
+    }
+    @media screen and (max-width: 600px) {
+        gap: 30px;
+        align-items: stretch;
+        padding: 60px 40px;
+
+        h3 {
+            text-align: center;
+        }
+    }
+
     .flex-buttons {
         @include flex(center, center);
         gap: 20px;
+
+        @media screen and (max-width: 1100px) {
+            flex-wrap: wrap;
+        }
 
         .btn-uses {
             height: 100px;
@@ -479,6 +569,18 @@ section#liana-uses {
             @include font($bold, 30px, $liana-green);
             @include flexcenter();
             border-radius: 0 40px;
+            white-space: nowrap;
+
+            @media screen and (max-width: 1300px) {
+                font-size: 26px;
+            }
+
+            @media screen and (max-width: 600px) {
+                width: 100%;
+                font-size: 24px;
+                white-space: normal;
+                text-align: center;
+            }
 
             @media (hover: hover) {
                 &:hover {
@@ -498,13 +600,40 @@ section#inheritance {
     padding: 7% 3% 7% 5%;
     @include flexcenter();
 
+    .section-content-wrapper {
+        @media screen and (max-width: 1000px) {
+            flex-direction: column-reverse;
+            align-items: center;
+
+            .flex-start-col {
+                max-width: 800px;
+            }
+
+            .section-img-wrapper {
+                width: 100%;
+                margin: auto;
+            }
+        }
+    }
+
     h2 {
         white-space: nowrap;
     }
+}
 
-    .collapsed-text {
-        display: none;
-    }
+/* Collapsable Text */
+input#inheritanceCollapsable:not(:checked) ~ .collapsed-text.readmore-inheritance {
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    height: 0;
+    display: none;
+}
+input#inheritanceCollapsable:not(:checked) ~ .readmore-inheritance .btn-open {
+    display: block;
+}
+input#inheritanceCollapsable:not(:checked) ~ .readmore-inheritance .btn-close {
+    display: none;
 }
 
 /********************* 4th Section - BACKUPS ***************************************************************/
@@ -519,14 +648,15 @@ section#backups {
     }
 
     h2 {
-        color: $liana-lime-green;
+        color: $liana-green;
         text-align: center;
         line-height: 64px;
     }
 
     h3 {
         text-transform: none;
-        color: $liana-lime-green;
+        color: $liana-green;
+        text-align: center;
     }
 
     h5 {
@@ -541,17 +671,47 @@ section#backups {
         @include font($regular, 16px, $liana-grey);
         font-family: $regular-italic;
     }
+    .section-content-wrapper {
+        margin-bottom: 30px;
+
+        @media screen and (max-width: 860px) {
+            flex-direction: column;
+        }
+
+        .section-img-wrapper {
+            @media screen and (max-width: 860px) {
+                width: 100%;
+                margin: auto;
+            }
+        }
+    }
     .collapsed-text {
-        display: none;
         align-items: center;
         gap: 20px;
         max-width: 800px;
-        margin-top: 60px;
+        margin-bottom: 30px;
+        width: 100%;
+        height: auto;
 
         .text {
             color: $liana-light-grey;
         }
     }
+}
+
+/* Collapsable Text */
+input#backupsCollapsable:not(:checked) ~ .collapsed-text.readmore-backups {
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    height: 0;
+    display: none;
+}
+input#backupsCollapsable:not(:checked) ~ .readmore-backups .btn-open {
+    display: block;
+}
+input#backupsCollapsable:not(:checked) ~ .readmore-backups .btn-close {
+    display: none;
 }
 
 /********************* 5th Section - MULTISIG ***************************************************************/
@@ -576,6 +736,15 @@ section#multisig {
             color: #9b9b9b;
             font-size: 15px;
         }
+
+        @media screen and (max-width: 830px) {
+            flex-direction: column;
+
+            .section-img-wrapper {
+                width: 100%;
+                margin: auto;
+            }
+        }
     }
 
     .btn-secondary {
@@ -590,6 +759,13 @@ section#plans {
     padding: 6% 5%;
     background-color: #f5f5f5;
 
+    @media screen and (max-width: 1150px) {
+        padding: 60px 40px;
+    }
+    @media screen and (max-width: 840px) {
+        padding: 60px 20px;
+    }
+
     h3 {
         @include font($bold, 58px, $liana-black);
         text-transform: none;
@@ -599,6 +775,10 @@ section#plans {
         line-height: 147%;
         max-width: 580px;
         text-align: center;
+        @media screen and (max-width: 840px) {
+            margin-top: 12px;
+            line-height: 120%;
+        }
     }
     .plan-cards-container {
         @include flex(center, stretch);
@@ -606,7 +786,16 @@ section#plans {
         max-width: 1200px;
         margin: auto;
         margin-top: 40px;
-        flex-wrap: wrap;
+
+        @media screen and (max-width: 1150px) {
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (max-width: 840px) {
+            flex-direction: column;
+            margin-top: 20px;
+        }
 
         .plan-card {
             height: auto;
@@ -619,9 +808,18 @@ section#plans {
             border-color: $liana-green;
             @include flex(space-between, stretch, column);
 
+            @media screen and (max-width: 840px) {
+                max-width: 600px;
+                padding: 20px;
+            }
+
             .card-content {
                 @include flex(flex-start, stretch, column);
                 gap: 16px;
+
+                @media screen and (max-width: 840px) {
+                    gap: 10px;
+                }
 
                 .badge {
                     background-color: $liana-light-grey;
@@ -653,7 +851,7 @@ section#plans {
 
                 ul.specs {
                     @include flex(flex-start, stretch, column);
-                    gap: 14px;
+                    gap: 10px;
 
                     li.spec-item {
                         @include flex(flex-start, flex-start);
@@ -671,6 +869,7 @@ section#plans {
                             border-radius: 4px;
                             padding: 0 4px;
                             @include font($regular, 10px, #1aa703);
+                            white-space: nowrap;
                         }
                     }
                 }
@@ -683,7 +882,23 @@ section#plans {
 
                 a {
                     width: 100%;
+                }
+
+                .text {
+                    @include font($medium, 14px, $liana-black);
                     text-align: center;
+                }
+                .text-btn {
+                    @include font($semibold, 14px, $liana-black);
+                    text-decoration: underline;
+                    width: 100%;
+                    text-align: center;
+
+                    @media (hover: hover) {
+                        &:hover {
+                            color: $liana-green;
+                        }
+                    }
                 }
             }
         }
@@ -698,6 +913,11 @@ section#faqs {
     padding: 5%;
     @include flex(flex-start, stretch, column);
     gap: 60px;
+
+    @media screen and (max-width: 850px) {
+        padding: 60px 20px;
+        gap: 30px;
+    }
 
     h4 {
         @include font($bold, 36px, $liana-light-grey);
@@ -732,10 +952,6 @@ section#faqs {
                 transition: display 1s;
             }
 
-            .toggle-input {
-                display: none;
-            }
-
             .question-container {
                 max-height: 45px;
                 background-color: $liana-grey;
@@ -743,6 +959,12 @@ section#faqs {
                 @include flex(space-between, center);
                 width: 100%;
                 cursor: pointer;
+                border-bottom: 1px solid #b6b6b6;
+
+                @media screen and (max-width: 850px) {
+                    max-height: 60px;
+                }
+
                 @media (hover: hover) {
                     &:hover {
                         background-color: $white;
@@ -751,6 +973,10 @@ section#faqs {
 
                 .text-question {
                     @include font($semibold, 18px, $liana-black);
+
+                    @media screen and (max-width: 850px) {
+                        font-size: 16px;
+                    }
                 }
             }
             .answer-container {
@@ -928,17 +1154,32 @@ section#specs,
 section#hardware-signers {
     background-color: $liana-black;
     padding: 7% 5%;
+
+    @media screen and (max-width: 850px) {
+        padding: 60px 20px;
+    }
 }
 .container-3col {
     max-width: 1200px;
     @include flex(space-between, flex-start);
     margin: auto;
+    gap: 10px;
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+    }
 
     .each-col {
         width: 33%;
         @include flex(flex-start, center, column);
         gap: 10px;
         flex: 1;
+
+        @media screen and (max-width: 600px) {
+            width: 100%;
+        }
 
         h6 {
             max-width: 245px;
@@ -948,27 +1189,60 @@ section#hardware-signers {
             width: auto;
             height: 100%;
             max-height: 126px;
+
+            @media screen and (max-width: 600px) {
+                max-height: 100px;
+            }
         }
     }
 }
 
 section#hardware-signers {
+    @media screen and (max-width: 600px) {
+        padding-top: 20px;
+    }
+
     h3 {
-        @include font($bold, 40px, $liana-lime-green);
+        @include font($bold, 40px, $liana-green);
         text-transform: none;
         text-align: center;
+
+        @media screen and (max-width: 900px) {
+            font-size: 36px;
+        }
+        @media screen and (max-width: 600px) {
+            font-size: 28px;
+        }
     }
     p.hardware-description {
         @include font($light, 20px, $white);
         text-align: center;
         margin-bottom: 60px;
+
+        @media screen and (max-width: 600px) {
+            font-size: 16px;
+            margin-bottom: 40px;
+            margin-top: 6px;
+        }
+    }
+    .container-3col {
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
     }
     .each-col {
         background-color: $liana-grey;
         border-radius: 4px;
         @include flexcenter();
         height: 120px;
-        max-width: 320px;
+        max-width: 300px;
+
+        @media screen and (max-width: 600px) {
+            flex: auto;
+            height: 80px;
+        }
 
         h6 {
             color: $liana-black;
@@ -977,6 +1251,10 @@ section#hardware-signers {
         img {
             max-height: 86px;
             width: auto;
+
+            @media screen and (max-width: 900px) {
+                max-height: 60px;
+            }
         }
 
         @media (hover: hover) {
@@ -987,10 +1265,21 @@ section#hardware-signers {
     }
     .coming {
         background-color: $grey;
+        @media screen and (max-width: 768px) {
+            flex: 0.5;
+        }
+
+        @media screen and (max-width: 600px) {
+            flex: auto;
+        }
 
         h6 {
             font-size: 24px;
             color: $liana-light-grey;
+            @media screen and (max-width: 768px) {
+                font-size: 18px;
+                line-height: 20px;
+            }
         }
         @media (hover: hover) {
             &:hover {
@@ -1005,6 +1294,10 @@ section#hardware-signers {
 section#contacts {
     background-color: $grey-darker;
     padding: 5%;
+
+    @media screen and (max-width: 1100px) {
+        padding: 40px 20px;
+    }
 
     .btn-green {
         text-transform: none;
@@ -1031,10 +1324,23 @@ section#contacts {
         @include flex(center, stretch);
         gap: 40px;
 
+        @media screen and (max-width: 950px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 1100px) {
+            gap: 20px;
+        }
+
         .card {
             background-color: $liana-black;
             border-radius: 0 100px;
             padding: 40px 50px;
+
+            @media screen and (max-width: 600px) {
+                width: 100%;
+            }
         }
         h6 {
             @include font($bold, 26px, $white);
@@ -1057,6 +1363,10 @@ section#contacts {
             @include flex(flex-start, center);
             gap: 20px;
 
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+
             h6 {
                 white-space: nowrap;
             }
@@ -1073,13 +1383,27 @@ section#contacts {
                 max-height: 22px;
                 width: 100%;
                 height: auto;
+
+                @media screen and (max-width: 550px) {
+                    width: auto;
+                }
             }
             .flex-wrapper {
                 @include flex(flex-start, baseline);
                 gap: 6px;
 
+                @media screen and (max-width: 550px) {
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                }
+
                 .btn-green {
                     margin-right: 6px;
+                    padding: 0 12px;
+
+                    @media screen and (max-width: 550px) {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -1094,7 +1418,7 @@ footer {
     background-color: #0e0e0e;
     border-top: 1px solid;
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 768px) {
         flex-direction: column;
         align-items: center;
         gap: 60px;
@@ -1170,8 +1494,14 @@ footer {
                     border-radius: 50%;
                     width: 30px;
                     height: 30px;
-                    &:hover {
-                        background-color: $blue;
+                    @media (hover: hover) {
+                        &:hover {
+                            svg {
+                                path {
+                                    fill: $liana-green;
+                                }
+                            }
+                        }
                     }
                     img {
                         width: 30px;

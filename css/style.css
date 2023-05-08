@@ -170,10 +170,19 @@ h2 {
   color: #141414;
   line-height: 60px;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1100px) {
   h2 {
-    font-size: 38px;
-    line-height: 42px;
+    font-size: 56px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  h2 {
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 650px) {
+  h2 {
+    font-size: 40px;
   }
 }
 
@@ -184,6 +193,17 @@ h3 {
   color: #cccccc;
   text-transform: uppercase;
 }
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
 
 h5 {
   font-family: "IBM Plex Sans", sans-serif;
@@ -191,6 +211,12 @@ h5 {
   font-size: 24px;
   color: #2e2e2e;
   line-height: 26px;
+}
+@media screen and (max-width: 768px) {
+  h5 {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
 h6 {
@@ -200,6 +226,12 @@ h6 {
   color: #f4f4f4;
   line-height: 36px;
   text-align: center;
+}
+@media screen and (max-width: 850px) {
+  h6 {
+    font-size: 26px;
+    line-height: 28px;
+  }
 }
 
 p {
@@ -263,15 +295,15 @@ p.text {
 }
 
 .btn-secondary {
-  border: 1px solid #8fff71;
-  color: #8fff71;
+  border: 1px solid #00ff66;
+  color: #00ff66;
 }
 .btn-secondary:focus, .btn-secondary:visited {
-  color: #8fff71;
+  color: #00ff66;
 }
 @media (hover: hover) {
   .btn-secondary:hover {
-    background-color: #8fff71;
+    background-color: #00ff66;
     color: #141414;
     filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.1));
   }
@@ -348,11 +380,16 @@ p.text {
   align-items: flex-start;
   flex-direction: row;
   max-width: 1200px;
-  gap: 60px;
+  gap: 30px;
 }
 .section-content-wrapper .flex-start-col {
   flex: 1;
   gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .section-content-wrapper .flex-start-col {
+    gap: 14px;
+  }
 }
 .section-content-wrapper .section-img-wrapper {
   width: 50%;
@@ -362,6 +399,25 @@ p.text {
 .section-content-wrapper .section-img-wrapper img {
   height: 100%;
   width: 100%;
+}
+.section-content-wrapper .collapsed-text {
+  transition: height 1s;
+  transition: transform 0.2s;
+  transform-origin: top;
+}
+
+.btn-open {
+  display: none;
+  transition: display 1s;
+}
+
+.btn-close {
+  display: block;
+  transition: display 1s;
+}
+
+.toggle-input {
+  display: none;
 }
 
 /****************************************** Header ******************************************/
@@ -511,16 +567,20 @@ header .bottom-header .menu-git {
   height: 25px;
   width: 26px;
 }
-@media (hover: hover) {
-  header .bottom-header .menu-git:hover {
-    background-color: #00ff66;
-  }
-}
 header .bottom-header .menu-git a {
   display: flex;
   justify-content: center;
   align-items: center;
   -webkit-box-orient: vertical;
+}
+header .bottom-header .menu-git a svg {
+  width: 24px;
+  height: auto;
+}
+@media (hover: hover) {
+  header .bottom-header .menu-git a:hover svg path {
+    fill: #00ff66;
+  }
 }
 header .bottom-header .disabled a {
   cursor: default;
@@ -559,6 +619,8 @@ section#banner .banner-wrapper {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  /* TODO: define correct breakpoint after knowing what is going here */
+  flex-wrap: wrap;
 }
 section#banner .banner-wrapper .banner-text {
   display: flex;
@@ -573,6 +635,13 @@ section#banner .banner-wrapper .banner-text p.description {
   font-size: 24px;
   color: #e6e6e6;
   line-height: 31px;
+}
+section#banner .banner-wrapper .banner-text p.sub-description {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #cccccc;
+  line-height: 24px;
 }
 section#banner .banner-wrapper .banner-text .banner-image {
   max-width: 600px;
@@ -595,12 +664,32 @@ section#liana-uses {
   flex-direction: column;
   gap: 60px;
 }
+@media screen and (max-width: 768px) {
+  section#liana-uses {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  section#liana-uses {
+    gap: 30px;
+    align-items: stretch;
+    padding: 60px 40px;
+  }
+  section#liana-uses h3 {
+    text-align: center;
+  }
+}
 section#liana-uses .flex-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 20px;
+}
+@media screen and (max-width: 1100px) {
+  section#liana-uses .flex-buttons {
+    flex-wrap: wrap;
+  }
 }
 section#liana-uses .flex-buttons .btn-uses {
   height: 100px;
@@ -615,6 +704,20 @@ section#liana-uses .flex-buttons .btn-uses {
   align-items: center;
   -webkit-box-orient: vertical;
   border-radius: 0 40px;
+  white-space: nowrap;
+}
+@media screen and (max-width: 1300px) {
+  section#liana-uses .flex-buttons .btn-uses {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 600px) {
+  section#liana-uses .flex-buttons .btn-uses {
+    width: 100%;
+    font-size: 24px;
+    white-space: normal;
+    text-align: center;
+  }
 }
 @media (hover: hover) {
   section#liana-uses .flex-buttons .btn-uses:hover {
@@ -633,10 +736,35 @@ section#inheritance {
   align-items: center;
   -webkit-box-orient: vertical;
 }
+@media screen and (max-width: 1000px) {
+  section#inheritance .section-content-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  section#inheritance .section-content-wrapper .flex-start-col {
+    max-width: 800px;
+  }
+  section#inheritance .section-content-wrapper .section-img-wrapper {
+    width: 100%;
+    margin: auto;
+  }
+}
 section#inheritance h2 {
   white-space: nowrap;
 }
-section#inheritance .collapsed-text {
+
+/* Collapsable Text */
+input#inheritanceCollapsable:not(:checked) ~ .collapsed-text.readmore-inheritance {
+  transform: scaleY(0);
+  height: 0;
+  display: none;
+}
+
+input#inheritanceCollapsable:not(:checked) ~ .readmore-inheritance .btn-open {
+  display: block;
+}
+
+input#inheritanceCollapsable:not(:checked) ~ .readmore-inheritance .btn-close {
   display: none;
 }
 
@@ -653,13 +781,14 @@ section#backups .heading-wrapper {
   margin-bottom: 40px;
 }
 section#backups h2 {
-  color: #8fff71;
+  color: #00ff66;
   text-align: center;
   line-height: 64px;
 }
 section#backups h3 {
   text-transform: none;
-  color: #8fff71;
+  color: #00ff66;
+  text-align: center;
 }
 section#backups h5 {
   color: #e6e6e6;
@@ -679,15 +808,45 @@ section#backups .text-italic {
   color: #cccccc;
   font-family: "ibm_plex_sansitalic";
 }
+section#backups .section-content-wrapper {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 860px) {
+  section#backups .section-content-wrapper {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 860px) {
+  section#backups .section-content-wrapper .section-img-wrapper {
+    width: 100%;
+    margin: auto;
+  }
+}
 section#backups .collapsed-text {
-  display: none;
   align-items: center;
   gap: 20px;
   max-width: 800px;
-  margin-top: 60px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: auto;
 }
 section#backups .collapsed-text .text {
   color: #e6e6e6;
+}
+
+/* Collapsable Text */
+input#backupsCollapsable:not(:checked) ~ .collapsed-text.readmore-backups {
+  transform: scaleY(0);
+  height: 0;
+  display: none;
+}
+
+input#backupsCollapsable:not(:checked) ~ .readmore-backups .btn-open {
+  display: block;
+}
+
+input#backupsCollapsable:not(:checked) ~ .readmore-backups .btn-close {
+  display: none;
 }
 
 /********************* 5th Section - MULTISIG ***************************************************************/
@@ -713,6 +872,15 @@ section#multisig .section-content-wrapper p.text.grey {
   color: #9b9b9b;
   font-size: 15px;
 }
+@media screen and (max-width: 830px) {
+  section#multisig .section-content-wrapper {
+    flex-direction: column;
+  }
+  section#multisig .section-content-wrapper .section-img-wrapper {
+    width: 100%;
+    margin: auto;
+  }
+}
 section#multisig .btn-secondary {
   padding: 0 80px;
 }
@@ -726,6 +894,16 @@ section#plans {
   gap: 10px;
   padding: 6% 5%;
   background-color: #f5f5f5;
+}
+@media screen and (max-width: 1150px) {
+  section#plans {
+    padding: 60px 40px;
+  }
+}
+@media screen and (max-width: 840px) {
+  section#plans {
+    padding: 60px 20px;
+  }
 }
 section#plans h3 {
   font-family: "IBM Plex Sans", sans-serif;
@@ -743,6 +921,12 @@ section#plans .plans-description {
   max-width: 580px;
   text-align: center;
 }
+@media screen and (max-width: 840px) {
+  section#plans .plans-description {
+    margin-top: 12px;
+    line-height: 120%;
+  }
+}
 section#plans .plan-cards-container {
   display: flex;
   justify-content: center;
@@ -752,7 +936,18 @@ section#plans .plan-cards-container {
   max-width: 1200px;
   margin: auto;
   margin-top: 40px;
-  flex-wrap: wrap;
+}
+@media screen and (max-width: 1150px) {
+  section#plans .plan-cards-container {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 840px) {
+  section#plans .plan-cards-container {
+    flex-direction: column;
+    margin-top: 20px;
+  }
 }
 section#plans .plan-cards-container .plan-card {
   height: auto;
@@ -768,12 +963,23 @@ section#plans .plan-cards-container .plan-card {
   align-items: stretch;
   flex-direction: column;
 }
+@media screen and (max-width: 840px) {
+  section#plans .plan-cards-container .plan-card {
+    max-width: 600px;
+    padding: 20px;
+  }
+}
 section#plans .plan-cards-container .plan-card .card-content {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
   flex-direction: column;
   gap: 16px;
+}
+@media screen and (max-width: 840px) {
+  section#plans .plan-cards-container .plan-card .card-content {
+    gap: 10px;
+  }
 }
 section#plans .plan-cards-container .plan-card .card-content .badge {
   background-color: #e6e6e6;
@@ -822,7 +1028,7 @@ section#plans .plan-cards-container .plan-card .card-content ul.specs {
   justify-content: flex-start;
   align-items: stretch;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 section#plans .plan-cards-container .plan-card .card-content ul.specs li.spec-item {
   display: flex;
@@ -849,6 +1055,7 @@ section#plans .plan-cards-container .plan-card .card-content ul.specs li.spec-it
   font-weight: 400;
   font-size: 10px;
   color: #1aa703;
+  white-space: nowrap;
 }
 section#plans .plan-cards-container .plan-card .card-footer {
   display: flex;
@@ -860,7 +1067,27 @@ section#plans .plan-cards-container .plan-card .card-footer {
 }
 section#plans .plan-cards-container .plan-card .card-footer a {
   width: 100%;
+}
+section#plans .plan-cards-container .plan-card .card-footer .text {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #141414;
   text-align: center;
+}
+section#plans .plan-cards-container .plan-card .card-footer .text-btn {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #141414;
+  text-decoration: underline;
+  width: 100%;
+  text-align: center;
+}
+@media (hover: hover) {
+  section#plans .plan-cards-container .plan-card .card-footer .text-btn:hover {
+    color: #00ff66;
+  }
 }
 
 /********************* 7th Section - FAQ's ***************************************************************/
@@ -884,6 +1111,12 @@ section#faqs {
   /* 8th FAQ */
   /* 9th FAQ */
   /* 10th FAQ */
+}
+@media screen and (max-width: 850px) {
+  section#faqs {
+    padding: 60px 20px;
+    gap: 30px;
+  }
 }
 section#faqs h4 {
   font-family: "IBM Plex Sans", sans-serif;
@@ -920,9 +1153,6 @@ section#faqs .faqs-wrapper .faq-item .arrow_open {
 section#faqs .faqs-wrapper .faq-item .arrow_close {
   transition: display 1s;
 }
-section#faqs .faqs-wrapper .faq-item .toggle-input {
-  display: none;
-}
 section#faqs .faqs-wrapper .faq-item .question-container {
   max-height: 45px;
   background-color: #cccccc;
@@ -933,6 +1163,12 @@ section#faqs .faqs-wrapper .faq-item .question-container {
   flex-direction: row;
   width: 100%;
   cursor: pointer;
+  border-bottom: 1px solid #b6b6b6;
+}
+@media screen and (max-width: 850px) {
+  section#faqs .faqs-wrapper .faq-item .question-container {
+    max-height: 60px;
+  }
 }
 @media (hover: hover) {
   section#faqs .faqs-wrapper .faq-item .question-container:hover {
@@ -944,6 +1180,11 @@ section#faqs .faqs-wrapper .faq-item .question-container .text-question {
   font-weight: 600;
   font-size: 18px;
   color: #141414;
+}
+@media screen and (max-width: 850px) {
+  section#faqs .faqs-wrapper .faq-item .question-container .text-question {
+    font-size: 16px;
+  }
 }
 section#faqs .faqs-wrapper .faq-item .answer-container {
   width: 100%;
@@ -1070,6 +1311,12 @@ section#hardware-signers {
   background-color: #141414;
   padding: 7% 5%;
 }
+@media screen and (max-width: 850px) {
+  section#specs,
+  section#hardware-signers {
+    padding: 60px 20px;
+  }
+}
 
 .container-3col {
   max-width: 1200px;
@@ -1078,6 +1325,14 @@ section#hardware-signers {
   align-items: flex-start;
   flex-direction: row;
   margin: auto;
+  gap: 10px;
+}
+@media screen and (max-width: 600px) {
+  .container-3col {
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+  }
 }
 .container-3col .each-col {
   width: 33%;
@@ -1088,6 +1343,11 @@ section#hardware-signers {
   gap: 10px;
   flex: 1;
 }
+@media screen and (max-width: 600px) {
+  .container-3col .each-col {
+    width: 100%;
+  }
+}
 .container-3col .each-col h6 {
   max-width: 245px;
 }
@@ -1096,14 +1356,34 @@ section#hardware-signers {
   height: 100%;
   max-height: 126px;
 }
+@media screen and (max-width: 600px) {
+  .container-3col .each-col img {
+    max-height: 100px;
+  }
+}
 
+@media screen and (max-width: 600px) {
+  section#hardware-signers {
+    padding-top: 20px;
+  }
+}
 section#hardware-signers h3 {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 700;
   font-size: 40px;
-  color: #8fff71;
+  color: #00ff66;
   text-transform: none;
   text-align: center;
+}
+@media screen and (max-width: 900px) {
+  section#hardware-signers h3 {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 600px) {
+  section#hardware-signers h3 {
+    font-size: 28px;
+  }
 }
 section#hardware-signers p.hardware-description {
   font-family: "IBM Plex Sans", sans-serif;
@@ -1113,6 +1393,20 @@ section#hardware-signers p.hardware-description {
   text-align: center;
   margin-bottom: 60px;
 }
+@media screen and (max-width: 600px) {
+  section#hardware-signers p.hardware-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+    margin-top: 6px;
+  }
+}
+@media screen and (max-width: 600px) {
+  section#hardware-signers .container-3col {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
 section#hardware-signers .each-col {
   background-color: #cccccc;
   border-radius: 4px;
@@ -1121,7 +1415,13 @@ section#hardware-signers .each-col {
   align-items: center;
   -webkit-box-orient: vertical;
   height: 120px;
-  max-width: 320px;
+  max-width: 300px;
+}
+@media screen and (max-width: 600px) {
+  section#hardware-signers .each-col {
+    flex: auto;
+    height: 80px;
+  }
 }
 section#hardware-signers .each-col h6 {
   color: #141414;
@@ -1129,6 +1429,11 @@ section#hardware-signers .each-col h6 {
 section#hardware-signers .each-col img {
   max-height: 86px;
   width: auto;
+}
+@media screen and (max-width: 900px) {
+  section#hardware-signers .each-col img {
+    max-height: 60px;
+  }
 }
 @media (hover: hover) {
   section#hardware-signers .each-col:hover {
@@ -1138,9 +1443,25 @@ section#hardware-signers .each-col img {
 section#hardware-signers .coming {
   background-color: #7b7b7b;
 }
+@media screen and (max-width: 768px) {
+  section#hardware-signers .coming {
+    flex: 0.5;
+  }
+}
+@media screen and (max-width: 600px) {
+  section#hardware-signers .coming {
+    flex: auto;
+  }
+}
 section#hardware-signers .coming h6 {
   font-size: 24px;
   color: #e6e6e6;
+}
+@media screen and (max-width: 768px) {
+  section#hardware-signers .coming h6 {
+    font-size: 18px;
+    line-height: 20px;
+  }
 }
 @media (hover: hover) {
   section#hardware-signers .coming:hover {
@@ -1152,6 +1473,11 @@ section#hardware-signers .coming h6 {
 section#contacts {
   background-color: #373737;
   padding: 5%;
+}
+@media screen and (max-width: 1100px) {
+  section#contacts {
+    padding: 40px 20px;
+  }
 }
 section#contacts .btn-green {
   text-transform: none;
@@ -1174,10 +1500,26 @@ section#contacts .content-wrapper {
   flex-direction: row;
   gap: 40px;
 }
+@media screen and (max-width: 950px) {
+  section#contacts .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1100px) {
+  section#contacts .content-wrapper {
+    gap: 20px;
+  }
+}
 section#contacts .content-wrapper .card {
   background-color: #141414;
   border-radius: 0 100px;
   padding: 40px 50px;
+}
+@media screen and (max-width: 600px) {
+  section#contacts .content-wrapper .card {
+    width: 100%;
+  }
 }
 section#contacts .content-wrapper h6 {
   font-family: "IBM Plex Sans", sans-serif;
@@ -1211,6 +1553,11 @@ section#contacts .content-wrapper .contacts-card {
   flex-direction: row;
   gap: 20px;
 }
+@media screen and (max-width: 768px) {
+  section#contacts .content-wrapper .contacts-card {
+    flex-direction: column;
+  }
+}
 section#contacts .content-wrapper .contacts-card h6 {
   white-space: nowrap;
 }
@@ -1227,6 +1574,11 @@ section#contacts .content-wrapper .contacts-card #ws-lettering-logo {
   width: 100%;
   height: auto;
 }
+@media screen and (max-width: 550px) {
+  section#contacts .content-wrapper .contacts-card #ws-lettering-logo {
+    width: auto;
+  }
+}
 section#contacts .content-wrapper .contacts-card .flex-wrapper {
   display: flex;
   justify-content: flex-start;
@@ -1234,8 +1586,20 @@ section#contacts .content-wrapper .contacts-card .flex-wrapper {
   flex-direction: row;
   gap: 6px;
 }
+@media screen and (max-width: 550px) {
+  section#contacts .content-wrapper .contacts-card .flex-wrapper {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
 section#contacts .content-wrapper .contacts-card .flex-wrapper .btn-green {
   margin-right: 6px;
+  padding: 0 12px;
+}
+@media screen and (max-width: 550px) {
+  section#contacts .content-wrapper .contacts-card .flex-wrapper .btn-green {
+    width: 100%;
+  }
 }
 
 /********************* Footer ***************************************************************/
@@ -1248,7 +1612,7 @@ footer {
   background-color: #0e0e0e;
   border-top: 1px solid;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   footer {
     flex-direction: column;
     align-items: center;
@@ -1351,8 +1715,10 @@ footer .footer-menu .each-col .icons-holder .a-icon {
   width: 30px;
   height: 30px;
 }
-footer .footer-menu .each-col .icons-holder .a-icon:hover {
-  background-color: #5ba9c8;
+@media (hover: hover) {
+  footer .footer-menu .each-col .icons-holder .a-icon:hover svg path {
+    fill: #00ff66;
+  }
 }
 footer .footer-menu .each-col .icons-holder .a-icon img {
   width: 30px;
