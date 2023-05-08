@@ -367,7 +367,7 @@ header {
 
             @media (hover: hover) {
                 &:hover {
-                    color: $light-green;
+                    color: $light-blue;
                 }
             }
         }
@@ -376,7 +376,7 @@ header {
             cursor: default;
         }
         .product-menu-item.active a {
-            color: $light-green;
+            color: $lighter-blue;
         }
     }
 
@@ -505,11 +505,14 @@ section#banner {
         margin-bottom: 5%;
         @include flex(space-between, center);
         /* TODO: define correct breakpoint after knowing what is going here */
-        flex-wrap: wrap;
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+        }
 
         .banner-text {
             @include flex(flex-start, flex-start, column);
-            width: 50%;
 
             p.description {
                 @include font($semibold, 24px, $liana-light-grey);
@@ -529,6 +532,10 @@ section#banner {
                     object-fit: contain;
                 }
             }
+        }
+
+        .banner-image {
+            width: auto;
         }
     }
 }

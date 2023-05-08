@@ -1,11 +1,6 @@
 @charset "UTF-8";
-:root {
-  /* New variables */
-  --grey-header: #1d1d1d;
-}
-
-/* Liana Variables, delete WS */
-/* FONT FACE IMPORTS FOR LOCAL FONT */
+/* Header variables */
+/* Liana variables */
 @font-face {
   font-family: "ibm_plex_sansbold";
   src: url("../assets/font/ibmplexsans-bold-webfont.woff2") format("woff2"), url("../assets/font/ibmplexsans-bold-webfont.woff") format("woff");
@@ -480,7 +475,7 @@ header .top-header .product-menu-item a {
 }
 @media (hover: hover) {
   header .top-header .product-menu-item a:hover {
-    color: #9beb85;
+    color: #b0def0;
   }
 }
 header .top-header .product-menu-item.disabled a {
@@ -488,7 +483,7 @@ header .top-header .product-menu-item.disabled a {
   cursor: default;
 }
 header .top-header .product-menu-item.active a {
-  color: #9beb85;
+  color: #c3dfea;
 }
 header .bottom-header {
   height: 50px;
@@ -620,14 +615,19 @@ section#banner .banner-wrapper {
   align-items: center;
   flex-direction: row;
   /* TODO: define correct breakpoint after knowing what is going here */
-  flex-wrap: wrap;
+}
+@media screen and (max-width: 900px) {
+  section#banner .banner-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
 }
 section#banner .banner-wrapper .banner-text {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  width: 50%;
 }
 section#banner .banner-wrapper .banner-text p.description {
   font-family: "IBM Plex Sans", sans-serif;
@@ -652,6 +652,9 @@ section#banner .banner-wrapper .banner-text .banner-image img {
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
+}
+section#banner .banner-wrapper .banner-image {
+  width: auto;
 }
 
 /********************* 2nd Section - LIANA USES ***************************************************************/

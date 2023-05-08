@@ -1,17 +1,12 @@
-:root {
-  /* New variables */
-  --grey-header: #1d1d1d;
-}
+//-------- COLOR VARIABLES -------//
 
+/* Header variables */
 $grey-header: #1d1d1d;
 $light-blue: #b0def0;
 $lighter-blue: #c3dfea;
-$blue: #5ba9c8;
-$text-color: #d0d0d0;
-$grey: #868686;
 $gradient-ws: linear-gradient(44.91deg, #555498 -5.12%, #7fa0f5 49.85%, #4eaace 92.6%);
 
-/* Liana Variables, delete WS */
+/* Liana variables */
 $liana-green: #00ff66;
 $liana-lime-green: #8fff71;
 $liana-light-grey: #e6e6e6;
@@ -33,6 +28,8 @@ $medium: 500;
 $semibold: 600;
 $bold: 700;
 $black: 900;
+
+//-------- MIXINS -------//
 
 @mixin font($font-weight, $font-size, $color) {
   font-family: $primary-font;
@@ -71,7 +68,7 @@ $black: 900;
   -webkit-box-direction: normal;
 }
 
-/* FONT FACE IMPORTS FOR LOCAL FONT */
+//-------- FONT FACE IMPORTS FOR LOCAL FONT -------//
 
 @font-face {
   font-family: "ibm_plex_sansbold";
