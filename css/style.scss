@@ -58,8 +58,8 @@ a:active {
 /******************* Text styles ******************/
 
 h1 {
-    @include font($bold, 80px, #fff);
-    line-height: 87.2px;
+    @include font($bold, 80px, $liana-green);
+    line-height: 76px;
 
     @media screen and (max-width: 768px) {
         font-size: 46px;
@@ -131,7 +131,7 @@ p.text {
 
 /******************* Buttons ******************/
 
-.btn-primary {
+.btn-primary-liana {
     height: 44px;
     border-radius: 0 16px;
     background-color: $liana-black;
@@ -172,8 +172,8 @@ p.text {
     }
 }
 
-.btn-secondary {
-    @extend .btn-primary;
+.btn-secondary-liana {
+    @extend .btn-primary-liana;
     border: 1px solid $liana-green;
     color: $liana-green;
 
@@ -198,7 +198,7 @@ p.text {
 }
 
 .btn-green {
-    @extend .btn-primary;
+    @extend .btn-primary-liana;
     background-color: $liana-green;
     color: $liana-black;
     border: 1px solid $liana-green;
@@ -298,7 +298,9 @@ p.text {
         transition: -webkit-transform 0.2s;
         -o-transition: transform 0.2s;
         transition: transform 0.2s;
-        transition: transform 0.2s, -webkit-transform 0.2s;
+        transition:
+            transform 0.2s,
+            -webkit-transform 0.2s;
         -webkit-transform-origin: top;
         -ms-transform-origin: top;
         transform-origin: top;
@@ -380,7 +382,7 @@ header {
         }
     }
 
-    .bottom-header {
+    .bottom-header-liana {
         height: 50px;
         padding: 0% 5%;
         background-color: #1d1d1d;
@@ -413,7 +415,7 @@ header {
             }
         }
 
-        #desktop-menu {
+        #desktop-menu-liana {
             ul {
                 @include flex(flex-end, center);
                 gap: 20px;
@@ -493,49 +495,252 @@ header {
 
 /********************* 1st Section - BANNER ***************************************************************/
 
-section#banner {
+section#banner-liana {
     min-height: calc(100vh - 60px);
     margin-top: 84px;
-    background-color: $liana-black;
+    background-color: #1d1d1d;
     padding: 10% 5%;
     @include flex(center, center, column);
 
     .banner-wrapper {
-        max-width: 1200px;
+        max-width: 1300px;
         margin-bottom: 5%;
         @include flex(space-between, center);
-        /* TODO: define correct breakpoint after knowing what is going here */
+        gap: 20px;
         @media screen and (max-width: 900px) {
             flex-direction: column;
             align-items: center;
-            gap: 60px;
+            max-width: 600px;
         }
 
         .banner-text {
             @include flex(flex-start, flex-start, column);
+            flex: 1;
+            gap: 16px;
 
             p.description {
                 @include font($semibold, 24px, $liana-light-grey);
                 line-height: 31px;
             }
             p.sub-description {
-                @include font($medium, 20px, $liana-grey);
+                @include font($medium, 20px, #959595);
                 line-height: 24px;
             }
-            .banner-image {
-                max-width: 600px;
-                overflow: hidden;
+        }
+        .banner-image {
+            flex: 1;
+            width: 100%;
 
-                img {
-                    width: 100%;
-                    height: auto;
-                    object-fit: contain;
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            #video-banner {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+/********************* MODAL - DOWNLOAD LIANA ***************************************************************/
+
+input#downloadModal:not(:checked) ~ .modal {
+    transform: scale(0);
+}
+
+.modal {
+    transform: scale(100%);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    @include flexcenter();
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /*  */
+    transition: transform 0.05s ease-in-out;
+    transform-origin: center;
+
+    @media screen and (max-width: 540px) {
+        min-height: 100vh;
+        height: auto;
+    }
+}
+.download-modal {
+    border-radius: 12px;
+    background-color: #191919;
+    padding: 20px;
+    @include flex(flex-start, center, column);
+    width: 100%;
+    height: 100%;
+    max-width: 700px;
+    max-height: 500px;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        max-height: 450px;
+        max-width: none;
+        border-radius: 0;
+    }
+
+    @media screen and (max-width: 540px) {
+        max-height: none;
+        height: auto;
+    }
+
+    label {
+        align-self: flex-end;
+    }
+    .modal-close {
+        width: 24px;
+        height: 24px;
+        @include flexcenter();
+        @media (hover: hover) {
+            &:hover {
+                svg {
+                    path {
+                        fill: $liana-green !important;
+                    }
                 }
             }
         }
+    }
 
-        .banner-image {
-            width: auto;
+    .content-modal {
+        max-width: 530px;
+        height: 100%;
+        padding: 0 20px 20px;
+        @include flex(space-between, center, column);
+
+        @media screen and (max-width: 540px) {
+            padding: 0 0 20px;
+        }
+
+        h3.title-modal {
+            @include font($bold, 40px, $liana-green);
+            text-align: center;
+            text-transform: none;
+            letter-spacing: 1%;
+
+            @media screen and (max-width: 768px) {
+                font-size: 36px;
+                margin-bottom: 14px;
+            }
+            @media screen and (max-width: 540px) {
+                line-height: 36px;
+            }
+        }
+        .liana-version {
+            @include font($semibold, 18px, $liana-light-grey);
+            text-align: center;
+            letter-spacing: 1%;
+        }
+        .text-op {
+            @include font($medium, 15px, $grey);
+            text-align: left;
+            width: 100%;
+            margin-bottom: 20px;
+            letter-spacing: 1%;
+
+            @media screen and (max-width: 540px) {
+                margin: 20px 0 10px 0;
+                text-align: center;
+            }
+        }
+
+        .flex-op-btns {
+            @include flex(space-between, stretch);
+            gap: 20px;
+
+            @media screen and (max-width: 768px) {
+                gap: 10px;
+            }
+            @media screen and (max-width: 540px) {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 40px;
+            }
+
+            .each-op-btn {
+                aspect-ratio: 1/1;
+                height: 165px;
+                width: 165px;
+                background-color: $grey-darker;
+                border-radius: 0 20px 0 20px;
+                padding: 20px;
+                @include flex(flex-end, center, column);
+
+                @media screen and (max-width: 768px) {
+                    height: 150px;
+                    width: 150px;
+                    padding: 16px;
+                    &:focus {
+                        background-color: $liana-green;
+                        .op {
+                            color: #000 !important;
+                        }
+                    }
+                }
+                @media screen and (max-width: 540px) {
+                    width: 100%;
+                }
+
+                svg {
+                    height: 57px;
+                    width: auto;
+
+                    @media screen and (max-width: 768px) {
+                    }
+                }
+                .op {
+                    @include font($bold, 24px, $liana-green);
+                    text-align: center;
+                    line-height: 109%;
+                    margin-top: 20px;
+
+                    @media screen and (max-width: 768px) {
+                        margin-top: 10px;
+                    }
+                }
+                .file-desc {
+                    @include font($regular, 14px, $grey);
+                    text-align: center;
+                }
+                @media (hover: hover) {
+                    &:hover {
+                        background-color: $liana-green;
+                        .op {
+                            color: #000 !important;
+                        }
+                    }
+                }
+            }
+        }
+        .btn-otherV {
+            @include flexcenter();
+            gap: 4px;
+            @include font($regular, 13px, $liana-grey);
+            span {
+                text-decoration: underline;
+            }
+            svg {
+                width: 11px;
+                height: 11px;
+            }
+            @media (hover: hover) {
+                &:hover {
+                    color: $liana-green;
+                    svg {
+                        path {
+                            fill: $liana-green !important;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -754,7 +959,7 @@ section#multisig {
         }
     }
 
-    .btn-secondary {
+    .btn-secondary-liana {
         padding: 0 80px;
     }
 }
@@ -997,7 +1202,9 @@ section#faqs {
                 transition: -webkit-transform 0.2s;
                 -o-transition: transform 0.2s;
                 transition: transform 0.2s;
-                transition: transform 0.2s, -webkit-transform 0.2s;
+                transition:
+                    transform 0.2s,
+                    -webkit-transform 0.2s;
                 -webkit-transform-origin: top;
                 -ms-transform-origin: top;
                 transform-origin: top;
@@ -1419,7 +1626,7 @@ section#contacts {
 
 /********************* Footer ***************************************************************/
 
-footer {
+footer#footer-liana {
     @include flex(space-between, center);
     padding: 4% 10%;
     background-color: #0e0e0e;
@@ -1435,7 +1642,7 @@ footer {
         gap: 40px;
     }
 
-    .logo-wrapper {
+    .logo-wrapper-liana {
         @include flex(flex-start, flex-start, column);
         gap: 12px;
 
@@ -1452,7 +1659,7 @@ footer {
             letter-spacing: 0.075em;
         }
     }
-    .footer-menu {
+    .footer-menu-liana {
         @include flex(flex-end, flex-start);
         gap: 60px;
 

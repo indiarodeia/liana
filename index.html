@@ -52,15 +52,15 @@
             </nav>
         </div>
 
-        <div class="bottom-header">
+        <div class="bottom-header-liana">
 
-            <a href="#banner">
+            <a href="#">
                 <div class="logo-and-text">
                     <img src="assets/images/logo_liana_green.svg" id="main-logo" alt="Liana Logo">
                 </div>
             </a>
 
-            <nav id="desktop-menu">
+            <nav id="desktop-menu-liana">
                 <ul>
                     <li class="menu-item"><a title="About" href="html/about.html">What's Liana?</a></li>
                     <li class="menu-item"><a title="Blog" href="html/blog.html">Plans</a></li>
@@ -76,33 +76,119 @@
 
             </nav>
 
+        </div>
+
     </header>
 
     <main>
 
         <!-- 1_SECTION__BANNER -->
-        <section id="banner">
+        <section id="banner-liana">
             <div class="banner-wrapper">
                 <div class="banner-text flex-start-col">
                     <h1>The safety net for your coins</h1>
                     <p class="description">Liana is a simple Bitcoin wallet leveraging on-chain timelocks for safety and
                         recovery.</p>
-
                     <p class="sub-description">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20" height="16">
+                            <path fill="#0F6"
+                                d="M7.504 20a7.502 7.502 0 0 0 7.503-7.5A7.502 7.502 0 0 0 7.504 20ZM7.504 0A7.502 7.502 0 0 0 0 7.5V20a7.502 7.502 0 0 0 7.504-7.5V0Z" />
+                        </svg>
                         Self-custody, you are in full control
-                        <br> Recovery paths if keys are lost
-                        <br> We never have control over the funds
+                        <br> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20" height="16">
+                            <path fill="#0F6"
+                                d="M7.504 20a7.502 7.502 0 0 0 7.503-7.5A7.502 7.502 0 0 0 7.504 20ZM7.504 0A7.502 7.502 0 0 0 0 7.5V20a7.502 7.502 0 0 0 7.504-7.5V0Z" />
+                        </svg>
+                        Recovery paths if keys are lost
+                        <br>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20" height="16">
+                            <path fill="#0F6"
+                                d="M7.504 20a7.502 7.502 0 0 0 7.503-7.5A7.502 7.502 0 0 0 7.504 20ZM7.504 0A7.502 7.502 0 0 0 0 7.5V20a7.502 7.502 0 0 0 7.504-7.5V0Z" />
+                        </svg>
+                        Inheritance built in
                     </p>
+                </div>
 
-                </div>
                 <div class="banner-image">
-                    <img src="/assets/images/default-image.png">
+                    <img src="/assets/images/screenshot_liana.png">
                 </div>
             </div>
-            <a title="Download Liana" href="https://github.com/wizardsardine/liana" target="_blank"
-                class="btn-green">Download Liana</a>
+
+            <input id="downloadModal" type="checkbox" class="toggle-input">
+            <label for="downloadModal" class="label" title="Read more">
+                <a title="Download Liana" class="btn-green">Download Liana</a>
+            </label>
+
+            <!-- Modal -->
+            <div class="modal">
+                <div class="download-modal">
+                    <label for="downloadModal" class="label" title="Read more">
+                        <a class="modal-close">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                                    fill="#373737" />
+                            </svg>
+                        </a>
+                    </label>
+
+
+                    <div class="content-modal">
+                        <div>
+                            <h3 class="title-modal">Download Liana</h3>
+                            <p class="liana-version">Latest version: 1.0v</p>
+                        </div>
+
+                        <div>
+                            <p class="text-op">Please choose your operating system:</p>
+
+                            <div class="flex-op-btns">
+                                <a class="each-op-btn" title="Linux Liana Download"
+                                    href="assets/liana/liana-1.0-x86_64-linux-gnu.tar.gz" download>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 56 66">
+                                        <path fill="#141414"
+                                            d="M26.57 16.025c0 .215-.213.215-.213.215h-.215c-.214 0-.214-.215-.428-.43 0 0-.215-.215-.215-.43 0-.214 0-.214.215-.214l.428.214c.215.215.429.43.429.645Zm-3.856-2.148c0-1.073-.429-1.718-1.072-1.718 0 0 0 .215-.214.215v.43h.643c0 .429.214.644.214 1.073h.429Zm7.5-1.073c.428 0 .643.429.857 1.073h.428c-.214-.215-.214-.43-.214-.644 0-.215 0-.43-.214-.644-.215-.215-.429-.43-.643-.43 0 0-.214.215-.429.215 0 .215.215.215.215.43Zm-6.429 3.435c-.214 0-.214 0-.214-.214 0-.215 0-.43.214-.644.429 0 .643-.215.643-.215.214 0 .214.214.214.214 0 .215-.214.43-.643.86h-.214Zm-2.357-.214c-.857-.43-1.072-1.074-1.072-2.148 0-.644 0-1.073.43-1.503.213-.43.642-.644 1.07-.644.43 0 .643.215 1.072.644.214.644.428 1.288.428 1.933v.43h.215v-.216c.214 0 .214-.429.214-1.288 0-.644 0-1.288-.428-1.933-.43-.644-.858-1.073-1.715-1.073-.643 0-1.285.43-1.5 1.073-.428.86-.514 1.504-.514 2.577 0 .86.3 1.718 1.157 2.577.214-.215.429-.215.643-.43Zm26.786 30.279c.214 0 .214-.086.214-.28 0-.472-.214-1.03-.857-1.653-.643-.644-1.715-1.052-3-1.224-.215-.022-.429-.022-.429-.022-.214-.043-.214-.043-.428-.043-.215-.021-.643-.064-.858-.107.643-1.997.858-3.758.858-5.304 0-2.148-.429-3.65-1.286-4.94-.857-1.288-1.714-1.932-2.786-2.147-.214.215-.214.215-.214.43a5.368 5.368 0 0 1 2.786 2.577c.642 1.503.857 2.791.857 4.295 0 1.202-.215 2.984-1.072 5.26-.857.344-1.714 1.139-2.357 2.385 0 .193 0 .3.214.3 0 0 .215-.193.43-.558.428-.365.642-.73 1.07-1.095.643-.365 1.072-.559 1.715-.559 1.071 0 2.143.15 2.785.451.858.28 1.286.58 1.5.924.215.322.43.622.643.901 0 .28.215.409.215.409ZM28.499 15.166c-.214-.215-.214-.645-.214-1.074 0-.859 0-1.288.429-1.933.428-.43.857-.644 1.285-.644.643 0 1.072.43 1.5.86.215.643.429 1.073.429 1.717 0 1.074-.429 1.718-1.286 1.933 0 0 .215.215.429.215.428 0 .643.214 1.071.429.214-1.289.429-2.148.429-3.221 0-1.289-.215-2.148-.643-2.792-.643-.644-1.286-.859-2.143-.859-.643 0-1.286.215-1.928.644-.43.645-.643 1.074-.643 1.718 0 1.074.214 1.933.643 2.792.214 0 .428.215.642.215Zm2.572 3.436c-2.786 1.932-4.929 2.791-6.643 2.791-1.5 0-3-.644-4.286-1.718.215.43.429.86.643 1.074l1.286 1.289c.857.858 1.928 1.288 3 1.288 1.5 0 3.214-.859 5.357-2.362l1.928-1.289c.43-.43.858-.859.858-1.503 0-.215 0-.43-.215-.43-.214-.429-1.285-1.073-3.428-1.717-1.929-.86-3.429-1.289-4.286-1.289-.643 0-1.714.43-3.214 1.289-1.286.859-2.143 1.718-2.143 2.577 0 0 .214.214.428.644 1.286 1.074 2.572 1.718 3.858 1.718 1.714 0 3.857-.86 6.643-3.007v.43c.214 0 .214.215.214.215Zm4.928 43.378c.857 1.615 2.357 2.426 4.072 2.426.428 0 .857-.064 1.285-.193.43-.086.858-.236 1.072-.408.214-.15.428-.3.643-.472.428-.15.428-.258.643-.365l3.642-3.157c.858-.685 1.715-1.284 2.786-1.804.857-.515 1.714-.859 2.143-1.052a3.823 3.823 0 0 0 1.5-.773c.214-.322.429-.73.429-1.246 0-.623-.429-1.095-.858-1.438a4.36 4.36 0 0 0-1.285-.73c-.429-.151-.857-.495-1.5-1.074a5.795 5.795 0 0 1-1.072-2.341l-.214-1.246c-.214-.58-.214-1.009-.428-1.245 0-.065 0-.086-.215-.086-.214 0-.643.193-.857.558-.428.365-.857.773-1.286 1.203-.214.43-.857.816-1.285 1.181-.643.365-1.286.558-1.715.558-1.714 0-2.571-.472-3.214-1.396-.428-.687-.643-1.481-.857-2.383-.429-.365-.643-.559-1.072-.559-1.07 0-1.5 1.117-1.5 3.372v6.678c0 .194-.214.623-.214 1.289-.214.666-.214 1.422-.214 2.276l-.429 2.384v.036M4.928 60.837c1.993.292 4.286.917 6.878 1.87 2.593.946 4.18 1.44 4.758 1.44 1.5 0 2.742-.666 3.771-1.952.214-.417.214-.907.214-1.47 0-2.029-1.221-4.595-3.664-7.709l-1.457-1.954c-.3-.408-.664-1.03-1.136-1.868a18.36 18.36 0 0 0-1.178-1.933c-.279-.494-.729-.988-1.308-1.481a4.398 4.398 0 0 0-1.907-.988c-.9.172-1.521.472-1.821.88a2.63 2.63 0 0 0-.514 1.332c-.065.45-.193.751-.407.902-.215.128-.58.236-1.072.343-.107 0-.3 0-.579.022h-.578c-1.136 0-1.907.129-2.314.343-.536.623-.815 1.332-.815 2.083 0 .344.086.924.258 1.74.17.794.257 1.438.257 1.89 0 .88-.257 1.76-.793 2.64-.536.924-.815 1.611-.815 2.1.215.834 1.63 1.42 4.222 1.764m7.136-19.52c0-1.482.385-3.114 1.178-5.047.772-1.932 1.543-3.22 2.293-4.08-.043-.215-.15-.215-.321-.215l-.215-.214c-.621.644-1.371 2.147-2.271 4.295-.9 1.932-1.371 3.715-1.371 5.025 0 .966.235 1.803.664 2.533.471.71 1.607 1.74 3.407 3.05l2.271 1.482c2.422 2.104 3.707 3.564 3.707 4.423 0 .451-.214.902-.857 1.396-.428.515-1.007.773-1.5.773-.043 0-.064.043-.064.15 0 .022.214.452.664 1.289.9 1.224 2.829 1.825 5.4 1.825 4.715 0 8.358-1.932 11.143-5.798 0-1.074 0-1.74-.214-2.018v-.795c0-1.396.214-2.448.643-3.135.428-.687.857-1.01 1.5-1.01.428 0 .857.15 1.285.473.215-1.654.215-3.092.215-4.38 0-1.955 0-3.566-.429-5.069a11.335 11.335 0 0 0-1.071-3.22l-1.286-1.934c-.428-.644-.643-1.288-1.071-1.932-.215-.86-.429-1.504-.429-2.577-.643-1.074-1.071-2.148-1.714-3.221-.429-1.074-.857-2.148-1.286-3.007l-1.928 1.503c-2.143 1.504-3.858 2.148-5.358 2.148-1.285 0-2.357-.215-3-1.074l-1.285-1.073c0 .644-.215 1.503-.643 2.362l-1.35 2.577c-.6 1.503-.922 2.362-.986 3.006-.086.43-.15.859-.193.859l-1.607 3.221c-1.736 3.221-2.614 6.206-2.614 8.676 0 .494.043 1.009.128 1.524-.964-.665-1.435-1.589-1.435-2.791Zm15.343 20.315c-2.786 0-4.93.378-6.43 1.127v-.065c-1.07 1.289-2.27 1.955-3.942 1.955-1.05 0-2.7-.408-4.928-1.224-2.25-.773-4.243-1.366-5.98-1.757-.17-.05-.556-.122-1.178-.221-.6-.097-1.157-.196-1.65-.294a12.4 12.4 0 0 1-1.521-.44c-.536-.17-.964-.391-1.286-.66-.296-.27-.441-.575-.441-.917 0-.343.073-.71.218-1.101.137-.237.287-.473.437-.688.15-.236.28-.45.365-.665.128-.194.214-.387.3-.602.085-.193.171-.386.214-.622.043-.215.086-.43.086-.645 0-.214-.086-.859-.257-1.997-.172-1.116-.257-1.825-.257-2.126 0-.944.214-1.696.685-2.233.472-.537.922-.816 1.393-.816H5.7c.193 0 .493-.107.943-.365.15-.344.279-.623.364-.88.108-.258.15-.452.193-.537.043-.13.086-.258.129-.366.086-.15.193-.322.343-.493-.172-.215-.257-.494-.257-.838 0-.236 0-.45.043-.58 0-.773.364-1.868 1.135-3.307l.75-1.353c.622-1.16 1.093-2.018 1.436-2.877.364-.86.75-2.148 1.178-3.866.343-1.503 1.158-3.006 2.443-4.51l1.607-1.932c1.115-1.288 1.843-2.362 2.25-3.221a6.932 6.932 0 0 0 .622-2.792c0-.43-.107-1.718-.343-3.865a63.86 63.86 0 0 1-.321-6.228c0-1.503.128-2.577.407-3.65.278-1.074.771-2.148 1.5-3.007.643-.859 1.5-1.718 2.786-2.147 1.285-.43 2.785-.644 4.5-.644.642 0 1.285 0 1.928.214.643 0 1.5.215 2.572.645.857.43 1.714.859 2.357 1.503.857.644 1.5 1.718 2.142 2.791.43 1.289.858 2.577 1.072 4.295.214 1.074.214 2.148.428 3.651 0 1.289.215 2.147.215 2.792.214.644.214 1.503.428 2.577.215.859.429 1.718.858 2.362.428.859.857 1.718 1.5 2.577.642 1.073 1.5 2.147 2.357 3.436 1.928 2.147 3.428 4.51 4.285 6.871 1.072 2.148 1.715 4.94 1.715 7.924 0 1.482-.215 2.92-.643 4.317.428 0 .643.172.857.472.214.3.428.945.643 1.954l.214 1.59c.214.472.429.923 1.072 1.31.428.386.857.708 1.5.966.428.215 1.07.515 1.5.902.428.43.642.88.642 1.353 0 .73-.214 1.267-.642 1.653-.43.43-.858.73-1.5.923-.43.215-1.286.645-2.572 1.25a23.319 23.319 0 0 0-3.214 2.32l-2.143 1.827a11.873 11.873 0 0 1-2.357 1.804c-.643.386-1.5.58-2.357.58l-1.5-.172c-1.715-.451-2.786-1.31-3.429-2.62-3.428-.417-6.214-.623-7.928-.623" />
+                                    </svg>
+                                    <p class="op">Linux</p>
+                                    <p class="file-desc">Liana.tar.gz</p>
+                                </a>
+                                <a class="each-op-btn" title="MacOS Liana Download" href="assets/liana/liana.zip"
+                                    download>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 47 57">
+                                        <path fill="#141414"
+                                            d="M25.903 4.96C29.645.024 34.847 0 34.847 0s.774 4.64-2.944 9.112c-3.969 4.773-8.48 3.992-8.48 3.992s-.847-3.754 2.48-8.144ZM23.9 16.355c1.925 0 5.497-2.649 10.148-2.649 8.004 0 11.153 5.701 11.153 5.701s-6.159 3.152-6.159 10.8c0 8.627 7.673 11.6 7.673 11.6s-5.363 15.11-12.608 15.11c-3.327 0-5.914-2.245-9.42-2.245-3.572 0-7.117 2.328-9.427 2.328C8.644 57 .287 42.668.287 31.147c0-11.335 7.074-17.282 13.709-17.282 4.313 0 7.66 2.49 9.903 2.49Z" />
+                                    </svg>
+                                    <p class="op">MacOS</p>
+                                    <p class="file-desc">Liana.zip</p>
+                                </a>
+                                <a class="each-op-btn" title="Windows Liana Download" href="assets/liana/liana-1.0.exe"
+                                    download>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 57 57">
+                                        <path fill="#141414"
+                                            d="M27.107 27.103H.377V.373h26.73v26.73Zm29.516 0H29.891V.373h26.73v26.73h.002ZM27.107 56.627H.377v-26.73h26.73v26.73Zm29.516 0H29.891v-26.73h26.73v26.73h.002Z" />
+                                    </svg>
+                                    <p class="op">Windows</p>
+                                    <p class="file-desc">Liana.exe</p>
+                                </a>
+                            </div>
+                        </div>
+                        <a class="btn-otherV" title="GitHub" href="https://github.com/wizardsardine/liana/releases"
+                            target="_blank">
+                            Other versions are available on our <span>GitHub</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 11 11">
+                                <path fill="#FFFFFF" fill-rule="evenodd"
+                                    d="M7.333 1.222a.611.611 0 0 1 0-1.222h3.056c.337 0 .611.274.611.611v3.056a.611.611 0 0 1-1.222 0v-1.58L5.32 6.542a.611.611 0 1 1-.864-.864l4.457-4.457h-1.58ZM.537 1.76c.344-.344.81-.537 1.296-.537H5.5a.611.611 0 0 1 0 1.222H1.833a.611.611 0 0 0-.61.612v6.11a.611.611 0 0 0 .61.612h6.111a.611.611 0 0 0 .612-.611V5.5a.611.611 0 1 1 1.222 0v3.667A1.833 1.833 0 0 1 7.944 11h-6.11A1.833 1.833 0 0 1 0 9.167V3.056c0-.487.193-.953.537-1.297Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
             </div>
+            <!-- end of modal -->
         </section>
+
 
         <!-- 2_SECTION__LIANA_USES -->
 
@@ -168,7 +254,8 @@
                             wallet rules and help you perform security checks.
                         </p>
                     </div>
-                    <label for="inheritanceCollapsable" class="btn-primary readmore-inheritance" title="Read more">
+                    <label for="inheritanceCollapsable" class="btn-primary-liana readmore-inheritance"
+                        title="Read more">
                         <a class="btn-open" title="Read less">Read more
                             <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                                 <path fill="#fff"
@@ -250,7 +337,7 @@
 
             </div>
 
-            <label for="backupsCollapsable" class="btn-secondary readmore-backups" title="Read more">
+            <label for="backupsCollapsable" class="btn-secondary-liana readmore-backups" title="Read more">
                 <a class="btn-open" title="Read less">Read more
                     <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                         <path fill="#8fff71" d="M16 6.706 9 13.5 2 6.706 3.243 5.5 9 11.088 14.758 5.5 16 6.706Z" />
@@ -293,7 +380,7 @@
                 </div>
 
             </div>
-            <a class="btn-secondary" title="talk to us" href="#">Talk to us</a>
+            <a class="btn-secondary-liana" title="talk to us" href="#">Talk to us</a>
 
         </section>
 
@@ -338,17 +425,15 @@
                                 <img src="assets/images/icon_check.svg">
                                 Community Support
                             </li>
-                            <li class="spec-item">
-                                <img src="assets/images/icon_cross.svg">
-                                Pre-set up
-                            </li>
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a title="Download Liana" href="https://github.com/wizardsardine/liana" target="_blank"
-                            class="btn-primary">Download
-                            Liana</a>
+                        <label for="downloadModal" class="label" title="Read more">
+                            <a title="Download Liana" class="btn-primary-liana">Download
+                                Liana</a>
+                        </label>
                         <p class="text">Liana is a free open source software</p>
+
                     </div>
                 </div>
 
@@ -414,7 +499,7 @@
                     </div>
                     <!-- TODO: fix this buttons to correct ones and add links-->
                     <div class="card-footer">
-                        <a href="#" title="Pay with credit card" class="btn-primary">Pay with credit card</a>
+                        <a href="#" title="Pay with credit card" class="btn-primary-liana">Pay with credit card</a>
                         <a class="text-btn">Payment with Bitcoins is also available</a>
                     </div>
                 </div>
@@ -481,7 +566,7 @@
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a href="#" title="Pay with credit card" class="btn-primary">Pay with credit card</a>
+                        <a href="#" title="Pay with credit card" class="btn-primary-liana">Pay with credit card</a>
                         <a class="text-btn">Payment with Bitcoins is also available</a>
                     </div>
                 </div>
@@ -738,7 +823,8 @@
                 <a class="each-col" title="ledger" href="https://www.ledger.com/" target="_blank">
                     <img src="/assets/images/logo_ledger.svg">
                 </a>
-                <a class="each-col">
+                <a title="Specter DIY" href="https://github.com/cryptoadvance/specter-diy" target="_blank"
+                    class="each-col">
                     <h6>Specter DIY</h6>
                 </a>
                 <div class="each-col coming">
@@ -799,12 +885,12 @@
 
     </main>
 
-    <footer>
-        <div class="logo-wrapper">
+    <footer id="footer-liana">
+        <div class="logo-wrapper-liana">
             <img src="assets/images/logo_liana_green.svg" alt="Liana Logo">
             <p id="credits"> © 2023 Wizardsardine LDA</p>
         </div>
-        <div class="footer-menu">
+        <div class="footer-menu-liana">
             <div class="each-col">
                 <ul>
                     <li class="col-title">Liana</li>

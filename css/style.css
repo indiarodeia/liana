@@ -144,8 +144,8 @@ h1 {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 700;
   font-size: 80px;
-  color: #fff;
-  line-height: 87.2px;
+  color: #00ff66;
+  line-height: 76px;
 }
 @media screen and (max-width: 768px) {
   h1 {
@@ -244,7 +244,7 @@ p.text {
 }
 
 /******************* Buttons ******************/
-.btn-primary, .btn-green, .btn-secondary {
+.btn-primary-liana, .btn-green, .btn-secondary-liana {
   height: 44px;
   border-radius: 0 16px;
   background-color: #141414;
@@ -263,46 +263,46 @@ p.text {
   white-space: nowrap;
   cursor: pointer;
 }
-.btn-primary .icon, .btn-green .icon, .btn-secondary .icon,
-.btn-primary img,
+.btn-primary-liana .icon, .btn-green .icon, .btn-secondary-liana .icon,
+.btn-primary-liana img,
 .btn-green img,
-.btn-secondary img {
+.btn-secondary-liana img {
   height: 18px;
   width: auto;
 }
-.btn-primary:focus, .btn-green:focus, .btn-secondary:focus, .btn-primary:visited, .btn-green:visited, .btn-secondary:visited {
+.btn-primary-liana:focus, .btn-green:focus, .btn-secondary-liana:focus, .btn-primary-liana:visited, .btn-green:visited, .btn-secondary-liana:visited {
   color: #fff;
 }
 @media (hover: hover) {
-  .btn-primary:hover, .btn-green:hover, .btn-secondary:hover {
+  .btn-primary-liana:hover, .btn-green:hover, .btn-secondary-liana:hover {
     background-color: #00ff66;
     color: #141414;
     filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.1));
   }
-  .btn-primary:hover svg path, .btn-green:hover svg path, .btn-secondary:hover svg path {
+  .btn-primary-liana:hover svg path, .btn-green:hover svg path, .btn-secondary-liana:hover svg path {
     fill: #141414;
   }
 }
 @media screen and (max-width: 768px) {
-  .btn-primary, .btn-green, .btn-secondary {
+  .btn-primary-liana, .btn-green, .btn-secondary-liana {
     font-size: 16px;
   }
 }
 
-.btn-secondary {
+.btn-secondary-liana {
   border: 1px solid #00ff66;
   color: #00ff66;
 }
-.btn-secondary:focus, .btn-secondary:visited {
+.btn-secondary-liana:focus, .btn-secondary-liana:visited {
   color: #00ff66;
 }
 @media (hover: hover) {
-  .btn-secondary:hover {
+  .btn-secondary-liana:hover {
     background-color: #00ff66;
     color: #141414;
     filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.1));
   }
-  .btn-secondary:hover svg path {
+  .btn-secondary-liana:hover svg path {
     fill: #141414;
   }
 }
@@ -485,7 +485,7 @@ header .top-header .product-menu-item.disabled a {
 header .top-header .product-menu-item.active a {
   color: #c3dfea;
 }
-header .bottom-header {
+header .bottom-header-liana {
   height: 50px;
   padding: 0% 5%;
   background-color: #1d1d1d;
@@ -498,43 +498,43 @@ header .bottom-header {
   /* revisto até aqui */
 }
 @media screen and (max-width: 520px) {
-  header .bottom-header {
+  header .bottom-header-liana {
     padding: 0 3%;
   }
 }
-header .bottom-header .logo-and-text {
+header .bottom-header-liana .logo-and-text {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   gap: 10px;
 }
-header .bottom-header .logo-and-text #main-logo {
+header .bottom-header-liana .logo-and-text #main-logo {
   height: 30px;
   width: auto;
 }
-header .bottom-header .logo-and-text #logo-name {
+header .bottom-header-liana .logo-and-text #logo-name {
   height: 18px;
   width: auto;
 }
 @media screen and (max-width: 520px) {
-  header .bottom-header .logo-and-text #logo-name {
+  header .bottom-header-liana .logo-and-text #logo-name {
     height: 14px;
   }
 }
 @media screen and (max-width: 400px) {
-  header .bottom-header .logo-and-text #logo-name {
+  header .bottom-header-liana .logo-and-text #logo-name {
     display: none;
   }
 }
-header .bottom-header #desktop-menu ul {
+header .bottom-header-liana #desktop-menu-liana ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: row;
   gap: 20px;
 }
-header .bottom-header #desktop-menu ul .menu-item a {
+header .bottom-header-liana #desktop-menu-liana ul .menu-item a {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -542,18 +542,18 @@ header .bottom-header #desktop-menu ul .menu-item a {
   white-space: nowrap;
 }
 @media (hover: hover) {
-  header .bottom-header #desktop-menu ul .menu-item a:hover {
+  header .bottom-header-liana #desktop-menu-liana ul .menu-item a:hover {
     color: #00ff66;
   }
 }
-header .bottom-header #desktop-menu ul .menu-item.active a {
+header .bottom-header-liana #desktop-menu-liana ul .menu-item.active a {
   color: #9beb85;
 }
-header .bottom-header li.menu-item img {
+header .bottom-header-liana li.menu-item img {
   height: 26px;
   width: 26px;
 }
-header .bottom-header .menu-git {
+header .bottom-header-liana .menu-git {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -562,33 +562,33 @@ header .bottom-header .menu-git {
   height: 25px;
   width: 26px;
 }
-header .bottom-header .menu-git a {
+header .bottom-header-liana .menu-git a {
   display: flex;
   justify-content: center;
   align-items: center;
   -webkit-box-orient: vertical;
 }
-header .bottom-header .menu-git a svg {
+header .bottom-header-liana .menu-git a svg {
   width: 24px;
   height: auto;
 }
 @media (hover: hover) {
-  header .bottom-header .menu-git a:hover svg path {
+  header .bottom-header-liana .menu-git a:hover svg path {
     fill: #00ff66;
   }
 }
-header .bottom-header .disabled a {
+header .bottom-header-liana .disabled a {
   cursor: default;
   color: var(--grey) !important;
 }
-header .bottom-header .menu-item.disabled:hover {
+header .bottom-header-liana .menu-item.disabled:hover {
   cursor: default;
   background: var(--grey);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-header .bottom-header span#coming-text {
+header .bottom-header-liana span#coming-text {
   color: var(--grey);
 }
 
@@ -597,64 +597,306 @@ header .bottom-header span#coming-text {
 }
 
 /********************* 1st Section - BANNER ***************************************************************/
-section#banner {
+section#banner-liana {
   min-height: calc(100vh - 60px);
   margin-top: 84px;
-  background-color: #141414;
+  background-color: #1d1d1d;
   padding: 10% 5%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-section#banner .banner-wrapper {
-  max-width: 1200px;
+section#banner-liana .banner-wrapper {
+  max-width: 1300px;
   margin-bottom: 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  /* TODO: define correct breakpoint after knowing what is going here */
+  gap: 20px;
 }
 @media screen and (max-width: 900px) {
-  section#banner .banner-wrapper {
+  section#banner-liana .banner-wrapper {
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    max-width: 600px;
   }
 }
-section#banner .banner-wrapper .banner-text {
+section#banner-liana .banner-wrapper .banner-text {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  flex: 1;
+  gap: 16px;
 }
-section#banner .banner-wrapper .banner-text p.description {
+section#banner-liana .banner-wrapper .banner-text p.description {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 600;
   font-size: 24px;
   color: #e6e6e6;
   line-height: 31px;
 }
-section#banner .banner-wrapper .banner-text p.sub-description {
+section#banner-liana .banner-wrapper .banner-text p.sub-description {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 500;
   font-size: 20px;
-  color: #cccccc;
+  color: #959595;
   line-height: 24px;
 }
-section#banner .banner-wrapper .banner-text .banner-image {
-  max-width: 600px;
-  overflow: hidden;
+section#banner-liana .banner-wrapper .banner-image {
+  flex: 1;
+  width: 100%;
 }
-section#banner .banner-wrapper .banner-text .banner-image img {
+section#banner-liana .banner-wrapper .banner-image img {
   width: 100%;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
-section#banner .banner-wrapper .banner-image {
+section#banner-liana .banner-wrapper .banner-image #video-banner {
+  width: 100%;
+  height: 100%;
+}
+
+/********************* MODAL - DOWNLOAD LIANA ***************************************************************/
+input#downloadModal:not(:checked) ~ .modal {
+  transform: scale(0);
+}
+
+.modal {
+  transform: scale(100%);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /*  */
+  transition: transform 0.05s ease-in-out;
+  transform-origin: center;
+}
+@media screen and (max-width: 540px) {
+  .modal {
+    min-height: 100vh;
+    height: auto;
+  }
+}
+
+.download-modal {
+  border-radius: 12px;
+  background-color: #191919;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 700px;
+  max-height: 500px;
+}
+@media screen and (max-width: 768px) {
+  .download-modal {
+    width: 100%;
+    max-height: 450px;
+    max-width: none;
+    border-radius: 0;
+  }
+}
+@media screen and (max-width: 540px) {
+  .download-modal {
+    max-height: none;
+    height: auto;
+  }
+}
+.download-modal label {
+  align-self: flex-end;
+}
+.download-modal .modal-close {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+}
+@media (hover: hover) {
+  .download-modal .modal-close:hover svg path {
+    fill: #00ff66 !important;
+  }
+}
+.download-modal .content-modal {
+  max-width: 530px;
+  height: 100%;
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 540px) {
+  .download-modal .content-modal {
+    padding: 0 0 20px;
+  }
+}
+.download-modal .content-modal h3.title-modal {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #00ff66;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 1%;
+}
+@media screen and (max-width: 768px) {
+  .download-modal .content-modal h3.title-modal {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .download-modal .content-modal h3.title-modal {
+    line-height: 36px;
+  }
+}
+.download-modal .content-modal .liana-version {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #e6e6e6;
+  text-align: center;
+  letter-spacing: 1%;
+}
+.download-modal .content-modal .text-op {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #7b7b7b;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 20px;
+  letter-spacing: 1%;
+}
+@media screen and (max-width: 540px) {
+  .download-modal .content-modal .text-op {
+    margin: 20px 0 10px 0;
+    text-align: center;
+  }
+}
+.download-modal .content-modal .flex-op-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .download-modal .content-modal .flex-op-btns {
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .download-modal .content-modal .flex-op-btns {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+}
+.download-modal .content-modal .flex-op-btns .each-op-btn {
+  aspect-ratio: 1/1;
+  height: 165px;
+  width: 165px;
+  background-color: #373737;
+  border-radius: 0 20px 0 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .download-modal .content-modal .flex-op-btns .each-op-btn {
+    height: 150px;
+    width: 150px;
+    padding: 16px;
+  }
+  .download-modal .content-modal .flex-op-btns .each-op-btn:focus {
+    background-color: #00ff66;
+  }
+  .download-modal .content-modal .flex-op-btns .each-op-btn:focus .op {
+    color: #000 !important;
+  }
+}
+@media screen and (max-width: 540px) {
+  .download-modal .content-modal .flex-op-btns .each-op-btn {
+    width: 100%;
+  }
+}
+.download-modal .content-modal .flex-op-btns .each-op-btn svg {
+  height: 57px;
   width: auto;
+}
+.download-modal .content-modal .flex-op-btns .each-op-btn .op {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #00ff66;
+  text-align: center;
+  line-height: 109%;
+  margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  .download-modal .content-modal .flex-op-btns .each-op-btn .op {
+    margin-top: 10px;
+  }
+}
+.download-modal .content-modal .flex-op-btns .each-op-btn .file-desc {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #7b7b7b;
+  text-align: center;
+}
+@media (hover: hover) {
+  .download-modal .content-modal .flex-op-btns .each-op-btn:hover {
+    background-color: #00ff66;
+  }
+  .download-modal .content-modal .flex-op-btns .each-op-btn:hover .op {
+    color: #000 !important;
+  }
+}
+.download-modal .content-modal .btn-otherV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  gap: 4px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #cccccc;
+}
+.download-modal .content-modal .btn-otherV span {
+  text-decoration: underline;
+}
+.download-modal .content-modal .btn-otherV svg {
+  width: 11px;
+  height: 11px;
+}
+@media (hover: hover) {
+  .download-modal .content-modal .btn-otherV:hover {
+    color: #00ff66;
+  }
+  .download-modal .content-modal .btn-otherV:hover svg path {
+    fill: #00ff66 !important;
+  }
 }
 
 /********************* 2nd Section - LIANA USES ***************************************************************/
@@ -884,7 +1126,7 @@ section#multisig .section-content-wrapper p.text.grey {
     margin: auto;
   }
 }
-section#multisig .btn-secondary {
+section#multisig .btn-secondary-liana {
   padding: 0 80px;
 }
 
@@ -1606,7 +1848,7 @@ section#contacts .content-wrapper .contacts-card .flex-wrapper .btn-green {
 }
 
 /********************* Footer ***************************************************************/
-footer {
+footer#footer-liana {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1616,7 +1858,7 @@ footer {
   border-top: 1px solid;
 }
 @media screen and (max-width: 768px) {
-  footer {
+  footer#footer-liana {
     flex-direction: column;
     align-items: center;
     gap: 60px;
@@ -1624,11 +1866,11 @@ footer {
   }
 }
 @media screen and (max-width: 500px) {
-  footer {
+  footer#footer-liana {
     gap: 40px;
   }
 }
-footer .logo-wrapper {
+footer#footer-liana .logo-wrapper-liana {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -1636,22 +1878,22 @@ footer .logo-wrapper {
   gap: 12px;
 }
 @media screen and (max-width: 500px) {
-  footer .logo-wrapper {
+  footer#footer-liana .logo-wrapper-liana {
     align-items: center;
   }
 }
-footer .logo-wrapper img {
+footer#footer-liana .logo-wrapper-liana img {
   width: 195px;
   height: auto;
 }
-footer .logo-wrapper #credits {
+footer#footer-liana .logo-wrapper-liana #credits {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
   color: #a1a1a1;
   letter-spacing: 0.075em;
 }
-footer .footer-menu {
+footer#footer-liana .footer-menu-liana {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -1659,57 +1901,57 @@ footer .footer-menu {
   gap: 60px;
 }
 @media screen and (max-width: 500px) {
-  footer .footer-menu {
+  footer#footer-liana .footer-menu-liana {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
   }
 }
-footer .footer-menu .each-col .col-title {
+footer#footer-liana .footer-menu-liana .each-col .col-title {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: #7b7b7b;
 }
-footer .footer-menu .each-col .col-title:hover {
+footer#footer-liana .footer-menu-liana .each-col .col-title:hover {
   color: #7b7b7b;
 }
-footer .footer-menu .each-col ul {
+footer#footer-liana .footer-menu-liana .each-col ul {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   gap: 12px;
 }
-footer .footer-menu .each-col ul li {
+footer#footer-liana .footer-menu-liana .each-col ul li {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   color: #e6e6e6;
   white-space: nowrap;
 }
-footer .footer-menu .each-col ul li:hover {
+footer#footer-liana .footer-menu-liana .each-col ul li:hover {
   color: #00ff66;
 }
-footer .footer-menu .each-col ul .disabled {
+footer#footer-liana .footer-menu-liana .each-col ul .disabled {
   color: #7b7b7b;
 }
-footer .footer-menu .each-col ul .disabled:hover {
+footer#footer-liana .footer-menu-liana .each-col ul .disabled:hover {
   text-decoration: none;
   color: #7b7b7b;
   cursor: default;
 }
-footer .footer-menu .each-col ul .disabled:hover a {
+footer#footer-liana .footer-menu-liana .each-col ul .disabled:hover a {
   cursor: default;
 }
-footer .footer-menu .each-col .icons-holder {
+footer#footer-liana .footer-menu-liana .each-col .icons-holder {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   gap: 10px;
 }
-footer .footer-menu .each-col .icons-holder .a-icon {
+footer#footer-liana .footer-menu-liana .each-col .icons-holder .a-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1719,11 +1961,11 @@ footer .footer-menu .each-col .icons-holder .a-icon {
   height: 30px;
 }
 @media (hover: hover) {
-  footer .footer-menu .each-col .icons-holder .a-icon:hover svg path {
+  footer#footer-liana .footer-menu-liana .each-col .icons-holder .a-icon:hover svg path {
     fill: #00ff66;
   }
 }
-footer .footer-menu .each-col .icons-holder .a-icon img {
+footer#footer-liana .footer-menu-liana .each-col .icons-holder .a-icon img {
   width: 30px;
   height: 30px;
 }/*# sourceMappingURL=style.css.map */
